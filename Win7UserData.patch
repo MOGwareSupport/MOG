@@ -1,0 +1,381 @@
+Index: MOG/MOG_CommandManager.cpp
+===================================================================
+--- MOG/MOG_CommandManager.cpp	(revision 3289)
++++ MOG/MOG_CommandManager.cpp	(working copy)
+@@ -690,7 +690,7 @@
+ bool MOG_CommandManager::Command_MOGRepository(MOG_Command *pCommand)
+ {
+ 	// Save new Repository info to our local ini
+-	String *localConfigFilename = String::Concat(MOG_Main::GetExecutablePath(), S"\\MOG.ini");
++	String *localConfigFilename = MOG_Main::GetLocalConfigFilename();
+ 	MOG_Ini *localConfigFile = new MOG_Ini();
+ 	if (localConfigFile->Open(localConfigFilename, FileShare::ReadWrite))
+ 	{
+Index: MOG/MOG_ControllerRipper.cpp
+===================================================================
+--- MOG/MOG_ControllerRipper.cpp	(revision 3298)
++++ MOG/MOG_ControllerRipper.cpp	(working copy)
+@@ -670,7 +670,7 @@
+ 
+ 	if (bLocal)
+ 	{
+-		tempDirectory = String::Concat(MOG_Main::GetExecutablePath());
++		tempDirectory = String::Concat(MOG_Main::GetUserAppDataPath());
+ 	}
+ 	else
+ 	{
+Index: MOG/MOG_Database.cpp
+===================================================================
+--- MOG/MOG_Database.cpp	(revision 3301)
++++ MOG/MOG_Database.cpp	(working copy)
+@@ -34,7 +34,7 @@
+ {
+ 	String *connectionString = "";
+ 
+-	String *filename = MOG_Main::FindLocalConfigFile();
++	String *filename = MOG_Main::GetLocalConfigFilename();
+ 	if (filename && filename->Length)
+ 	{
+ 		MOG_Ini *configFile = new MOG_Ini(filename);
+@@ -1482,7 +1482,7 @@
+ bool MOG_Database::SetDefaultConnectionString(String *connectionString)
+ {
+ 	// Save the new default connection string
+-	String *filename = MOG_Main::FindLocalConfigFile();
++	String *filename = MOG_Main::GetLocalConfigFilename();
+ 	if (filename && filename->Length)
+ 	{
+ 		MOG_Ini *config = new MOG_Ini();
+Index: MOG/MOG_Main.cpp
+===================================================================
+--- MOG/MOG_Main.cpp	(revision 3289)
++++ MOG/MOG_Main.cpp	(working copy)
+@@ -47,7 +47,7 @@
+ 		// Initialize MOG_REPORT for the server
+ // MOG is really stable now so I am shutting off the log files so things will run faster
+ //		MOG_Prompt::SetMode(MOG_PROMPT_MODE_TYPE::MOG_PROMPT_FILE);
+-		MOG_Report::SetLogFileName(String::Concat(Application::StartupPath, S"\\Logs\\Clients\\", Environment::MachineName, S".log"));
++		MOG_Report::SetLogFileName(String::Concat(MOG_Main::GetUserAppDataPath(), S"\\Logs\\Clients\\", Environment::MachineName, S".log"));
+ 
+ 		// Create a new system
+ 		return MOG_ControllerSystem::InitializeClient(configFilename);
+@@ -77,7 +77,7 @@
+ // MOG is really stable now so I am shutting off the log files so things will run faster
+ //		MOG_Prompt::SetMode(MOG_PROMPT_MODE_TYPE::MOG_PROMPT_FILE);
+ 		MOG_Prompt::SetMode(MOG_PROMPT_MODE_TYPE::MOG_PROMPT_SILENT);
+-		MOG_Report::SetLogFileName(String::Concat(Application::StartupPath, S"\\Logs\\Slaves\\", Environment::MachineName, S".log"));
++		MOG_Report::SetLogFileName(String::Concat(MOG_Main::GetUserAppDataPath(), S"\\Logs\\Slaves\\", Environment::MachineName, S".log"));
+ 
+ 		// Create a new system
+ 		return MOG_ControllerSystem::InitializeSlave(configFilename);
+@@ -107,7 +107,7 @@
+ // MOG is really stable now so I am shutting off the log files so things will run faster
+ //		MOG_Prompt::SetMode(MOG_PROMPT_MODE_TYPE::MOG_PROMPT_FILE);
+ //		MOG_Prompt::SetMode(MOG_PROMPT_MODE_TYPE::MOG_PROMPT_SILENT);
+-		MOG_Report::SetLogFileName(String::Concat(Application::StartupPath,S"\\Logs\\Editors\\", Environment::MachineName, S".log"));
++		MOG_Report::SetLogFileName(String::Concat(MOG_Main::GetUserAppDataPath(), S"\\Logs\\Editors\\", Environment::MachineName, S".log"));
+ 
+ 		// Create a new system
+ 		if (MOG_ControllerSystem::InitializeEditor(configFilename))
+@@ -141,7 +141,7 @@
+ //		MOG_Prompt::SetMode(MOG_PROMPT_MODE_TYPE::MOG_PROMPT_FILE);
+ 		MOG_Prompt::SetMode(MOG_PROMPT_MODE_TYPE::MOG_PROMPT_CONSOLE);
+ 		MOG_Prompt::SetMode(MOG_PROMPT_MODE_TYPE::MOG_PROMPT_SILENT);
+-		MOG_Report::SetLogFileName(String::Concat(Application::StartupPath, S"\\Logs\\CommandLines\\", Environment::MachineName, S".log"));
++		MOG_Report::SetLogFileName(String::Concat(MOG_Main::GetUserAppDataPath(), S"\\Logs\\CommandLines\\", Environment::MachineName, S".log"));
+ 
+ 		// Create a new system
+ 		return MOG_ControllerSystem::InitializeCommandLine(configFilename);
+@@ -182,6 +182,12 @@
+ }
+ 
+ 
++String *MOG_Main::GetUserAppDataPath()
++{
++	return Application::UserAppDataPath;
++}
++
++
+ String *MOG_Main::GetAssociatedWorkspacePath()
+ {
+ 	String *path = "";
+@@ -193,7 +199,7 @@
+ 	}
+ 	else
+ 	{
+-		// Assume the path of the executable
++		// Assume the path of the executable because we could be a Bridge DLL running from a legitimate workspace
+ 		path = Application::StartupPath;
+ 	}
+ 
+@@ -207,7 +213,7 @@
+ 
+ 	if (!configFile || !configFile->Length)
+ 	{
+-		configFile = FindLocalConfigFile();
++		configFile = GetLocalConfigFilename();
+ 	}
+ 
+ 	if (configFile->Length)
+@@ -227,68 +233,41 @@
+ 	return repositoryPath;
+ }
+ 
+-String *MOG_Main::GetDefaultSystemConfigFile(String *configFile)
++String *MOG_Main::GetDefaultSystemConfigFile(String *configFilename)
+ {
+ 	String *systemRepository = "";
+-	String *systemConfigFile = "";
++	String *systemConfigFilename = "";
+ 
+-	if (!configFile || !configFile->Length)
++	if (!configFilename || !configFilename->Length)
+ 	{
+-		configFile = FindLocalConfigFile();
++		configFilename = GetLocalConfigFilename();
+ 	}
+ 
+-	if (configFile->Length)
++	if (configFilename->Length)
+ 	{
+-		if (DosUtils::FileExistFast(configFile))
++		if (DosUtils::FileExistFast(configFilename))
+ 		{
+-			MOG_Ini *defaultSettings = new MOG_Ini(configFile);
++			MOG_Ini *defaultSettings = new MOG_Ini(configFilename);
+ 
+ 			if (defaultSettings->SectionExist("MOG") && defaultSettings->KeyExist("MOG", "SystemConfiguration"))
+ 			{
+ 				systemRepository = defaultSettings->GetString("MOG", "SystemRepositoryPath");
+-				systemConfigFile = defaultSettings->GetString("MOG", "SystemConfiguration");
++				systemConfigFilename = defaultSettings->GetString("MOG", "SystemConfiguration");
+ 
+ 				systemRepository = systemRepository->TrimEnd(S"\\"->ToCharArray());
+ 
+-				systemConfigFile = systemConfigFile->Replace(S"{SystemRepositoryPath}", systemRepository);
++				systemConfigFilename = systemConfigFilename->Replace(S"{SystemRepositoryPath}", systemRepository);
+ 			}
+ 		}
+ 	}
+ 
+-	return systemConfigFile;
++	return systemConfigFilename;
+ }
+ 
+ 
+-String *MOG_Main::FindInstalledConfigFile()
++String *MOG_Main::GetLocalConfigFilename()
+ {
+-	String* path = DosUtils::GetSystemEnvironmentVariable(S"MOG_PATH");
+-	if (path && path->Length)
+-	{
+-		return String::Concat(path, S"\\MOG.ini");
+-	}
+-	else
+-	{
+-// Removed because the ServerLoader is using the MOG.dll and it shouldn't!
+-// We want this warning, but just can't do it now.
+-//		MOG_Report::ReportMessage(	S"MOG_PATH not defined",
+-//									String::Concat(	S"MOG cannot find the config file, 'MOG.ini', because the MOG_PATH environment variable is not defined.\n",
+-//													S"MOG_PATH should point to the location at which you installed MOG",
+-//													S"If you have recently installed MOG, this may be resolved with a reboot."),
+-//									Environment::StackTrace,
+-//									MOG_ALERT_LEVEL::ERROR);
+-//
+-		return S"";
+-	}
+-}
+-
+-String *MOG_Main::FindLocalConfigFile()
+-{
+-	String* configFile = String::Concat(GetExecutablePath(), S"\\", S"MOG.ini");
+-	if (!DosUtils::FileExistFast(configFile))
+-	{
+-		configFile = FindInstalledConfigFile();
+-	}
+-
++	String* configFile = Path::Combine(MOG_Main::GetUserAppDataPath(), S"MOG.ini");
+ 	return configFile;
+ }
+ 
+Index: MOG/MOG_Main.h
+===================================================================
+--- MOG/MOG_Main.h	(revision 3289)
++++ MOG/MOG_Main.h	(working copy)
+@@ -48,6 +48,7 @@
+ 	static void SetName(String *name)								{ mName = name; };
+ 	static String *GetExecutablePath();
+ 	static String *GetExecutablePath_StripCurrentDirectory();
++	static String* GetUserAppDataPath();
+ 	static String *GetAssociatedWorkspacePath();
+ 	static void SetAssociatedWorkspacePath(String *path)			{ mAssociatedWorkspacePath = path->TrimEnd(S"\\"->ToCharArray()); };
+ 	static String *GetDefaultRepositoryPath(String *configFile);
+@@ -55,8 +56,7 @@
+ 	static String *GetDefaultSystemConfigFilenameDefine()			{ return MOG_SYSTEM_CONFIGFILENAME; };
+ 	static String *GetDefaultSystemRelativeConfigFileDefine()		{ return MOG_SYSTEM_RELATIVECONFIG; };
+ 	static String *GetDefaultSystemConfigFileDefine()				{ return MOG_SYSTEM_CONFIG; };
+-	static String *FindLocalConfigFile();
+-	static String *FindInstalledConfigFile();
++	static String *GetLocalConfigFilename();
+ 	static String *BuildDefaultConfigFile();
+ 
+ 	static void SetDisabledFeatureList(String *disabledFeatureList)	{ mDisabledFeatureList = disabledFeatureList; };
+Index: MOG_Client/Client_Mog_Utilities/MainMenuFileClass.cs
+===================================================================
+--- MOG_Client/Client_Mog_Utilities/MainMenuFileClass.cs	(revision 3289)
++++ MOG_Client/Client_Mog_Utilities/MainMenuFileClass.cs	(working copy)
+@@ -33,7 +33,7 @@
+ 			// Attempt to get our SQL connection string
+ 			string mConnectionString = "";
+ 
+-			MOG_Ini config = new MOG_Ini(MOG_Main.GetExecutablePath() + "\\MOG.ini");
++			MOG_Ini config = new MOG_Ini(MOG_Main.GetLocalConfigFilename());
+ 
+ 			SQLConnectForm sql = new SQLConnectForm();
+ 			if (sql.ShowDialog() == DialogResult.OK)
+Index: MOG_Client/Forms/SQLConnectForm.cs
+===================================================================
+--- MOG_Client/Forms/SQLConnectForm.cs	(revision 3289)
++++ MOG_Client/Forms/SQLConnectForm.cs	(working copy)
+@@ -62,7 +62,7 @@
+ 			dataSource = "";
+ 			initialCatalog = "MOG";
+ 
+-			MOG_Ini config = new MOG_Ini(MOG_Main.GetExecutablePath() + "\\MOG.ini");
++			MOG_Ini config = new MOG_Ini(MOG_Main.GetLocalConfigFilename());
+ 			if (config.KeyExist("SQL", "ConnectionString"))
+ 			{				
+ 				string connectionString = config.GetString("SQL", "ConnectionString");
+Index: MOG_ControlsLibrary/MogControl_LocalRepositoryBrowser/MogForm_RepositoryBrowser_Client.cs
+===================================================================
+--- MOG_ControlsLibrary/MogControl_LocalRepositoryBrowser/MogForm_RepositoryBrowser_Client.cs	(revision 3289)
++++ MOG_ControlsLibrary/MogControl_LocalRepositoryBrowser/MogForm_RepositoryBrowser_Client.cs	(working copy)
+@@ -278,7 +278,7 @@
+ 
+ 		public void SaveMOGConfiguration()
+ 		{
+-			string configFilename = MOG_Main.FindInstalledConfigFile();
++			string configFilename = MOG_Main.GetLocalConfigFilename();
+ 			MOG_Ini ini = new MOG_Ini();
+ 
+ 			if (ini.Load(configFilename))
+Index: MOG_Server/FormMainSMOG.cs
+===================================================================
+--- MOG_Server/FormMainSMOG.cs	(revision 3289)
++++ MOG_Server/FormMainSMOG.cs	(working copy)
+@@ -242,12 +242,12 @@
+ 			}
+ 
+ 			MOG_Ini mIni = null;
+-			string dumpFilename =  MOG_Main.GetExecutablePath() + "\\ServerStateDump.info";
++			string dumpFilename =  Path.Combine(MOG_ControllerSystem.GetSystemRepositoryPath(), "ServerStateDump.info");
+ 
+ 			try
+ 			{
+ 				// Establish proper settings in our ini
+-				mIni = new MOG_Ini(MOG_Main.GetExecutablePath() + "\\mog.ini");
++				mIni = new MOG_Ini(MOG_Main.GetLocalConfigFilename());
+ 				mIni.PutString("MOG", "ValidMogRepository", "");
+ 				mIni.PutString("SQL", "ConnectionString", MOG_ControllerSystem.GetDB().GetConnectionString());
+ 				mIni.Save();
+Index: MOG_Server/MOG_CommandServerCS.cs
+===================================================================
+--- MOG_Server/MOG_CommandServerCS.cs	(revision 3289)
++++ MOG_Server/MOG_CommandServerCS.cs	(working copy)
+@@ -90,9 +90,9 @@
+ 				pServer.CloseAllConnections();
+ 			}
+ 
+-			DumpServerStateToFile(String.Concat(MOG_Main.GetExecutablePath(), "\\ServerStateDump.info"));
++			DumpServerStateToFile(Path.Combine(MOG_ControllerSystem.GetSystemRepositoryPath(), "ServerStateDump.info"));
+ 
+-			MOG_Ini mIni = new MOG_Ini(String.Concat(MOG_Main.GetExecutablePath(), "\\mog.ini"));
++			MOG_Ini mIni = new MOG_Ini(MOG_Main.GetLocalConfigFilename());
+ 			mIni.PutBool("SERVERSTATUS", "ServerRunning", false);
+ 			mIni.Save();
+ 			mIni.Close();
+@@ -1750,7 +1750,7 @@
+ 		protected override bool Command_SQLConnection(MOG_Command pCommand)
+ 		{
+ 			// Save new Repository info to the Server's local ini
+-			string localConfigFilename = string.Concat(MOG_Main.GetExecutablePath(), "\\MOG.ini");
++			string localConfigFilename = MOG_Main.GetLocalConfigFilename();
+ 			MOG_Ini localConfigFile = new MOG_Ini();
+ 			if (localConfigFile.Open(localConfigFilename, FileShare.ReadWrite))
+ 			{
+@@ -1774,7 +1774,7 @@
+ 
+ 		protected override bool Command_MOGRepository(MOG_Command pCommand)
+ 		{
+-			string localConfigFilename = string.Concat(MOG_Main.GetExecutablePath(), "\\MOG.ini");
++			string localConfigFilename = MOG_Main.GetLocalConfigFilename();
+ 			string networkConfigFilename = string.Concat(pCommand.GetWorkingDirectory(), "\\", MOG_ControllerSystem.GetMogSystemRelativeConfig());
+ 
+ 			// First validate the specified repository...
+Index: MOG_ServerManager/MOG_ControlsLibrary/Common/MogUtil_TrashCollector/TrashPolicyEditorControl.cs
+===================================================================
+--- MOG_ServerManager/MOG_ControlsLibrary/Common/MogUtil_TrashCollector/TrashPolicyEditorControl.cs	(revision 3289)
++++ MOG_ServerManager/MOG_ControlsLibrary/Common/MogUtil_TrashCollector/TrashPolicyEditorControl.cs	(working copy)
+@@ -765,9 +765,6 @@
+ 			this.trashCollector.LogFilename = this.logFilename;
+ 			this.trashCollector.LogActions = true;
+ 
+-			//LoadMOGRepository("C:\\root\\tools\\mog.ini");
+-			//this.tbRepositoryLocation.Text = "C:\\root\\tools\\mog.ini";
+-
+ 			this.purgeTimer.Tick += new EventHandler(purgeTimer_Tick);
+ 			this.purgeTimer.Interval = 5000;		// each second
+ 			this.purgeTimer.Enabled = false;
+Index: MOG_ServerManager/MOG_ServerManagerMainForm.cs
+===================================================================
+--- MOG_ServerManager/MOG_ServerManagerMainForm.cs	(revision 3301)
++++ MOG_ServerManager/MOG_ServerManagerMainForm.cs	(working copy)
+@@ -1196,35 +1196,22 @@
+ 				this.lblServerVersion.Text = "MOG ServerManager 2005 - " + fileVersionInfo.FileVersion;
+ 			}
+ 
+-			// Get the SQL connection string info from mog.ini, if it exists
+-			//if (File.Exists(Application.StartupPath + "\\mog.ini"))
++			// Packet size=4096;integrated security=SSPI;data source=nemesis;persist security info=False;initial catalog=mog;
++			string connectionString = MOG_ControllerSystem.GetDB().GetConnectionString();
++			//string connectionString = mIni.GetString("SQL", "ConnectionString");
++			string sqlServerName = "";
++			string sqlDatabaseName = "";
++			string[] parts = connectionString.Split(";".ToCharArray());
++			foreach (string part in parts)
+ 			{
+-				//MOG_Ini mIni = new MOG_Ini(Application.StartupPath + "\\mog.ini");
+-				
+-				// Parse the sql server name from connection string
+-				//if (mIni.KeyExist("SQL", "ConnectionString"))
+-				{
+-					// Packet size=4096;integrated security=SSPI;data source=nemesis;persist security info=False;initial catalog=mog;
+-					string connectionString = MOG_ControllerSystem.GetDB().GetConnectionString();
+-					//string connectionString = mIni.GetString("SQL", "ConnectionString");
+-					string sqlServerName = "";
+-					string sqlDatabaseName = "";
+-					string[] parts = connectionString.Split(";".ToCharArray());
+-					foreach (string part in parts)
+-					{
+-						if (part.ToLower().StartsWith("data source="))
+-							sqlServerName = part.Substring( part.ToLower().IndexOf("data source=")+12 ).ToUpper();
+-						if (part.ToLower().StartsWith("initial catalog="))
+-							sqlDatabaseName = part.Substring( part.ToLower().IndexOf("initial catalog=")+16 );
+-					}
+-
+-					this.lblSQLServer.Text = sqlServerName + " (" + sqlDatabaseName + ")";
+-					//this.ServerManagerToolTip.SetToolTip( this.lblSQLServerLabel, connectionString );
+-					//this.ServerManagerToolTip.SetToolTip( this.lblSQLServer, connectionString );
+-				}
+-				//mIni.Close();
++				if (part.ToLower().StartsWith("data source="))
++					sqlServerName = part.Substring( part.ToLower().IndexOf("data source=")+12 ).ToUpper();
++				if (part.ToLower().StartsWith("initial catalog="))
++					sqlDatabaseName = part.Substring( part.ToLower().IndexOf("initial catalog=")+16 );
+ 			}
+ 
++			this.lblSQLServer.Text = sqlServerName + " (" + sqlDatabaseName + ")";
++
+ 			// Get latest demo project info
+ 			RefreshDemoProjectsListView();
+ 

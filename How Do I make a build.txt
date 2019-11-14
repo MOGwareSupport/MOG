@@ -1,0 +1,14 @@
+1) Update the MOG project from SVN
+
+2) Compile a release build
+
+3) Run 'PostReleaseVersion.bat' 
+	to post the new data to the l:\_MOGReleases\InstallerSrc\CurrentBinaries dir
+
+4) go to C:\Projects\MOGServerInstaller directory
+
+5) Run '!.bat' 
+	to update this dir with all the latest bins from the l:\_MOGReleases\InstallerSrc\CurrentBinaries dir
+
+6) Run 'BuildAll.bat'
+	A directory with the current timestamp will be created in the l:\_MOGReleases\Released dir with all the compiled bins

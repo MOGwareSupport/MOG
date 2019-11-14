@@ -1,0 +1,18 @@
+; -------------------------------------
+; These are the client settings
+; -------------------------------------
+ClientName:Client
+CMajorVersion:6
+CMinorVersion:0 
+
+; -------------------------------------
+; These are the server settings
+; -------------------------------------
+ServerName:Server
+SMajorVersion:6
+SMinorVersion:0
+
+; -------------------------------------
+; These are global settings
+; -------------------------------------
+BuildPrefix:3.0.6
