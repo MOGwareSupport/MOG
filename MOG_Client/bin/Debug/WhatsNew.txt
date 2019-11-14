@@ -1,0 +1,921 @@
+---------------------------------------------------- 
+Version 3.0.4.2488 : Wed 05/21/2008 - 14:28:02.93 
+---------------------------------------------------- 
+Fixed:					
+ 
+Added:					
+ Test build for QA and ToolBox items
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2487 : Wed 05/21/2008 - 12:05:08.42 
+---------------------------------------------------- 
+Fixed:					
+ Fixed CommandLine's '-q' option so the import asset wizard will not be called.
+ Changed CommandLine to never run the import asset wizard if the asset already exists in the project.
+ Changed CommandLine to never run the import asset wizard if the asset already exists in the inbox.
+ Fixed recently introduced bug where the target package wasn't setting the wizard's final confirmation screen.
+ Changed final confirmation page of the import asset wizard to say 'Target' rather than 'Sync Target' because it can contain a package or a sync target.
+ Fixed bug with GetLatest dialog where it wasn't respecting the 'None' option in the new toolstrips.
+ Fixed the properties dialog to refresh after the user changes the platform scope.
+ Fixed crash in the properties dialog when changing the platform scope (switching between platform-specific properties and normal properties).
+ Fixed the GetLatest from within the AdminTools 'Newer unposted revisions' report.
+ Optimized AdminTools 'Newer unposted revisions' report to generate faster.
+ Fixed AdminTools 'Newer unposted revisions' report to respect the selected classification. issue 1336
+ Changed asset import wizard to ask for the classification first before the name and platform.
+ Fixed GetLatest to respect what the user might subsequently change the GetLatest dialog's sync tag to. issue 1331
+ Fixed CleanWorkspace to properly trim off leading '\' caused from improper formulaic SyncTargetPath. issue 1332
+ Changed the ExportDatabase tables to include the Package/Post commands and local workspaces.
+
+Added:					
+ Added call to ShowFromNext() anytime wizard skips a wizard page to ensure the page will be populated correctly (Populating the target package tree).
+ Added code to purge a branch before it is created so user can create a new branch over the top of an old one.
+ Added code to purge a tag before it is created so user can create a new tag over the top of an old one.
+ Added new DefaultAssetNameIncludeExtension property for allowing the wizard to skip the asset name page.
+ Added new DefaultAssetNamePlatform property for allowing the wizard to skip the asset name platform page.
+ Enhanced MapFilenameToAssetName to include proper detection of newly created packages being imported from a foreign path.
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2467 : Fri 05/16/2008 - 22:00:47.16 
+---------------------------------------------------- 
+Fixed:					
+ Changed Library's UndoCheckout to leave the asset locked if the user ever chooses not to overwrite their local files.
+ Changed MOG_CommandLine ExportDatabase to included the SyncedLocations database tables.
+ Fixed crash when starting up the client on the library tab.
+ Fixed: Overwriting project buttons - issue 0001284
+
+Added:					
+ Added library's default classification to required classifications so new projects will always populate tree properly.
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2463 : Fri 05/16/2008 - 11:10:17.29 
+---------------------------------------------------- 
+Fixed:					
+ Changed the text on the Collapse tree icon (issue 1292)
+ Bullet-proofed report dialog's save in case the user closes the dialog before it has finished saving. (issue 1291)
+
+Added:					
+ Added calls to BeginUpdate/EndUpdate when expanding a tree node.
+ Synced up remaining trees that inherited from the PropertyTree to use the new mRequiredClassifications.
+ Enahnced Package Management tree to properly exclude children classifications and assets that have the property undefined.
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2455 : Wed 05/14/2008 - 18:26:17.46 
+---------------------------------------------------- 
+Fixed:					
+ Fixed the showing of platform-specific packages in the package management tree.
+ Fixed the recently introduced bug where assets were being included in the import dialog's classification tree.
+
+Added:					
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2454 : Wed 05/14/2008 - 17:47:04.01 
+---------------------------------------------------- 
+Fixed:					
+ Fixed bug where the archive directory was getting copied with the project data when demoizing a project. (issue 1185)
+ Fixed Server so it respects 'ValidSlaveMachines' in the config file but will still launch additional slaves provided they are not excluded.
+
+Added:					
+ Improved the speed of the package management tree.
+ Improved the speed of the project's package tree.
+ Moved the sounds submenu from Tools to Edit->Options.
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2446 : Wed 05/14/2008 - 14:11:58.27 
+---------------------------------------------------- 
+Fixed:					
+ Fixed a recently introduced bug with Editor delete workflow when obtaining nonblessed inbox assets needing to be automatically deleted.
+ Fixed bug where dragging items from a user's inbox was returning the user to their drafts.
+ Fixed crash with CommandLine's ImportAssetWizard when no local workspace was defined.
+ Fixed CommandLine's import so the AssetName doesn't require to start with the project name.
+
+Added:					
+ Added: ShowOldStyleButtons
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2437 : Tue 05/13/2008 - 15:01:15.96 
+---------------------------------------------------- 
+Fixed:					
+ Fixed crash with sorting the GetLatest dialog.
+
+Added:					
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2433 : Tue 05/13/2008 - 12:10:33.31 
+---------------------------------------------------- 
+Fixed:					
+ Fixed the asset importer to clear the past 'SourceFile' relationships.
+ Changed the asset importer to automatically set all 'SourceFile' relationships based on files being imported.
+ Fixed logic when mapping SourceFile relationships to MOG library assets.
+ Fixed MOG_CommandLine so the project name doesn't have to be included when importing an asset.
+
+Added:					
+ Enhanced MapFilenameToAssetName for better less ambiguous detections.
+ Added new utility functions in DosUtils for checking when a path is within a another root path.
+ Added bullet-proofed check in CopyEx() that could throw if it encountered a read/write file sharing violation.
+ Added bullet-proofed check in sorting lists that might contain NULLs.
+
+Removed:					
+ Removed MOG_CommandLine's requirement for obtaining a workspace from the server when importing an asset.
+ Turned off the lock icon updating in the local workspace explorer tree because it was really really slow when starting up on the workspace tab.
+
+---------------------------------------------------- 
+Version 3.0.4.2406 : Thu 05/08/2008 - 14:54:37.92 
+---------------------------------------------------- 
+Fixed:					
+ Fixed the GetLatest results dialog to properly display missing files.
+ Fixed spelling error with McCoy's name
+
+Added:					
+ Added: LatentInitialize for the local explorer treeview only to Initialize when it is visible or being made visible
+ Added bullet-proof check in GetLatest to prevent crash when a blessed asset is missing a file.
+ Added sort so GetLatest gets assets in order.Activated the new properties cache during GetLatest.
+
+Removed:					
+ 
+
+---------------------------------------------------- 
+Version 3.0.4.2392 : Mon 04/29/2008 - 12:39:23.03 
+---------------------------------------------------- 
+Fixed:					
+
+Added:					
+ Added: 64bit patch for exe's
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2358 : Wed 04/23/2008 -  9:44:35.34 
+---------------------------------------------------- 
+Fixed:					
+ Fixed Package Management Dialog to respect the 'Show platform-specific' checkbox when initializing the package tree view. (issue 1269)
+ Changed the Inbox's Drag & Drop event to immediately force the user to their own drafts.
+ Fixed bogus warning about invalid SyncTargetPath at the root of the project.
+ Fixed crash in PackageCreate dialog when creating a new package at the root of the project.
+ Fixed an obscure threading issue where inbox items could get added twice (visual bug).
+ Fixed the restamping of a locally updated asset as it is automatically being cleaned during a GetLatest.
+ Fixed bug when checking for colliding SyncTargetPaths with assets in the root of the project.
+ Fixed Package Management Dialog to properly check an asset's package assignment of a non-existing package.
+ Fixed Package Management Dialog to properly allow management of an asset's package assignment of a non-existing package.
+ Changed the GetLatest preview dialog to not show locally updated asset as always getting restamped.
+ Changed the shortcut in the workspace tab that returns to the user to their inbox to also force them to their drafts tab. (issue 1281)
+ Changed GetLatest's results dialog to display what assets were skipped anytime the user cancels a GetLatest.
+ Changed GetLatest's preview dialog to say 'Nothing New' rather than 'All Asset Current'.
+ Changed GetLatest's results dialog to say 'User Canceled' rather than 'All Asset Current' anytime the user cancels.
+ Changed MOG_Prompt 'Yes To All/No To All' so 'No' is the default instead of 'Yes'.
+
+Added:					
+ Added additional FileHamsterIntegration pauses when manipulating locally updated assets. (issue 1011)
+ Included a 'Blank' state and removed the 'Finished' and 'Completed' states.
+ Added check for missing non-existent packages in the bless dialog.
+ Added check for colliding SyncTargetPaths in the bless dialog.
+ Added check for no package assignments in the bless dialog.
+
+Removed:					
+ Removed the 'X' option from the progress dialog because it didn't play nice with shutting down the worker.
+ 
+---------------------------------------------------- 
+Version 3.0.4.2334 : Mon 04/21/2008 - 14:33:20.62 
+---------------------------------------------------- 
+Fixed:					
+ Fixed bug where user was unable to remove a local workspace that had just been renamed.
+ Fixed crash in report dialog when a report item is double-clicked.
+ Fixed the LastComment property when checking in a library asset.
+
+Added:					
+ Added possible fix for "Value of '-1' is not valid for 'index'" icon error.
+
+Removed:					
+ Removed feature locking for unlicensed versions of MOG so the free downloadable eval can be full featured. 
+  
+---------------------------------------------------- 
+Version 3.0.4.2312 : Wed 04/16/2008 -  1:24:20.47 
+---------------------------------------------------- 
+Fixed:					
+ Hooked up the new LocalData's Package tool strip's AutoPackage option
+ Changed the default of the LocalData's Package tool strip's AutoPackage option to true.
+
+Added:					
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2311 : Wed 04/16/2008 -  1:08:41.71 
+---------------------------------------------------- 
+Fixed:					
+ Rename Auto Update Always to Always Active
+ Fixed: LocalWorkspaceTab's menus to stay open till user selects off.
+ Fixed Package Management Dialog to check for user permissions when enabling the 'Create Classification' context menu item.
+ Fixed Package Management Dialog to check for user permissions when enabling the 'Remove' context menu item.
+ Fixed the enabling/disabling of context menu items in the package management dialog. (issue 1265)
+ Fixed bug where MOG_CommandLine was failing to reuse the properties of the previously imported inbox asset. (issue 1119)
+
+Added:					
+ Added a failsafe in RipAsset to set Native assets to Processed...nothing needs ripping so it should become Processed.
+ Hooked up the 'Auto Update Local' functionality.
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2304 : Tue 04/15/2008 - 18:05:32.10 
+---------------------------------------------------- 
+Fixed:					
+ Fixed: Library past of files into the library tree view
+ Moved: Library menu item for Generate report down to the bottom
+ Fixed crash when performing various Library actions on the very root node of the library tree.
+ Changed the library's database query for classification-level library actions to a faster query.
+ Changed the database query of the library's GetLatest function to a faster version.
+
+Added:					
+ Added more bullet-proofing to the database cache.
+ Added bullet-proofing that fixed a context menu crash on the connections tab.
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2300 : Tue 04/15/2008 - 13:26:37.92 
+---------------------------------------------------- 
+Fixed:					
+ Fixed project's main menu to properly sort the project names.
+ Fixed the automatic collapsing of the local workspace explorer tree after a GetLatest. (issue 1270)
+ Changed 'Force Sync' back to original 'Update Modified/Missing'.
+ Fixed the local assets repackagaging anytime GetLatest brings down a dependent package causing the local asset to need to be repackaged.
+ Fixed: MOG Event Viewer - Items in the Filters list should be sorted alphabetically (issue 1224)
+
+Added:					
+ Added new warning dialog anytime the user attempts to remove a locally updated asset that will subsequently cause it to fall out-of-date.
+ Added code to automatically set the asset's status to 'Imported' when it is being imported from itself in the local workspace (prevents auto update from wasting time copying the asset back over itself)
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2290 : Mon 04/14/2008 - 15:20:18.74 
+---------------------------------------------------- 
+Fixed:					
+ Fixed Lock load error message to report.Silent
+ Fixed: Trash rebuild
+  Changed trash color from salmon to black
+ Fixed a bug where the ImportAssetWizard wasn't properly populating if 'Make this selection default' was checked.
+
+Added:					
+ Hooked up MOG_Bridge to utilize the new Asset out-of-date validation routines.
+ Added: Copy paste of assets in library as duplicate and everywhere else as search and highlight
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2283 : Fri 04/11/2008 - 16:19:37.88 
+---------------------------------------------------- 
+Fixed:					
+ Fixed an error when trying to determine IsClassificationValidForProject for an asset in the root classification.
+ Bullet-proofed a lock info check.
+ Fixed ContextMenu's Lock/Unlock validation code for removed classifications in the archive tree.
+ Fixed the auto updating of marking the current revision blue in the archive tree in response to assets being blessed. 
+ Fixed LockTracker to immediately update its tables w/o having to wait for the server's lock notification command.
+
+Added:					
+ Improved the construction of the PackageAssignments within the Package Tree.
+ Added: Reorganized toolbox control creation windows
+ Added: FileComboBox - RecurseFolders option
+ Added: FileComboBox - FullFilenamesRadioButton
+ Added: FileComboBox - RelativeFilenamesRadioButton
+ Added: FileComboBox - BaseFilenamesRadioButton
+ Added new 'IgnoreSyncAsReadOnly' privilege for project admins.
+ Added checks when syncing 'SyncAsReadOnly' assets to respect the current locked state of the asset.
+ Hooked up Lock notifications in the callbacks to properly set the local file attributes.
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2269 : Wed 04/09/2008 - 17:07:50.71 
+---------------------------------------------------- 
+Fixed:					
+ Changed the local workspace back color from blue to Colors.control
+
+Added:					
+ Added new support so the attributes of local files will be effected by locks when 'SyncAsReadOnly' is true.
+ Added new 'SyncAsReadOnly' inheritable property.
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2266 : Wed 04/09/2008 - 14:50:00.02 
+---------------------------------------------------- 
+Fixed:					
+ Fixed the locks tab from triggering a full refresh anytime a lock notify came in.
+ Fixed the 'Fullname' column heading in the locks tab's list view so the precision updating would work again.
+ Fixed the 'Make this selection default' for knowing whether to use the advanced import wizard or the wizard.
+ Fixed the Bless Dialog to only show the bless warnings when the asset is coming from the drafts or inbox.
+ Fixed: Show/Hide tabs and WebTabs
+ Fixed: Renamed Update missing and modified to ForceSync
+ Fixed deleting a locked asset in the trash so it no longer asks about also freeing the lock.
+ 
+Added:					
+ Further optimizations for the project trees
+ Changed Context Menu's explore for local updated assets to explore the local file rather than the asset's container.
+ Changed the Bless Dialog's Resolve context menu option to only work with native syncing asset.
+ Added warning anytime a user can't resolve an asset in the bless dialog.
+ Changed the Bless Dialog list view to be full row select.
+ Added: BlessInfo context menu on unresolved items
+ Added new AutoLockOnImport property.
+ Enhanced LocalFileVerification property to also check if the local asset's files do not match what is about to be blessed.
+ Added major version checking to bridge.
+ Added capabilities to set silent mode, etc in the bridge.
+ Added: Get(ActiveTag)
+ Added: Advanced and improved toolbars for local workspaces
+ Added: Tab hiding and showing from within the visible menuItem
+ Added: Refresh for library window when user completes a sync
+ Added: Setting of activeTag to the ConfigureProject form
+ Added: Full string filtering for the generate report so that users can filter on user, machine, or owner, and size
+ Changed the LastComment property to not set if the comment is blank.
+ Set the asset's LastComment to a default string at Import time.
+ Set the asset's LastComment to a default string anytime it is copied.
+
+Removed:					
+ Changed 'Removed Files' to 'Removed' in the GetLatest results dialog.
+ Excluded tags from the initial startup Login dialog.
+
+---------------------------------------------------- 
+Version 3.0.4.2237 : Fri 04/04/2008 - 17:53:33.85 
+---------------------------------------------------- 
+Fixed:					
+ Trimmed all '\' from SyncTargetPath - Helps prevent issues from bad formulaic sync targets that may leave an extra backslash behind.
+
+Added:					
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2235 : Fri 04/04/2008 - 17:43:23.02 
+---------------------------------------------------- 
+Fixed:					
+ Corrected spelling in several prompts.
+ Fixed 'Admin Tools->Update Project For 3.0.4.X Drop' to also change the library file's created date.
+ Fixed 'Admin Tools->Update Project For 3.0.4.X Drop' to only scan Drafts and Inbox assets.
+ Fixed: Save and load of user reports
+ Fixed: Exception when collapsing and Expanding in the project tree with no node selected
+
+Added:					
+
+Removed:					
+ Removed tighter MOG Filename detection that subsequently broke the trash.
+ 
+---------------------------------------------------- 
+Version 3.0.4.2231 : Fri 04/04/2008 - 11:43:16.53 
+---------------------------------------------------- 
+Fixed:					
+Fixed a bogus out-of-date warning when checking in a library asset.
+Fixed the enabling of the 'Package Management' context menu item for classifications with IsPackagedAsset set to true.
+
+Added:					
+Added new LastComment property.
+Added new LastComment property to the report dialog.
+Added new OutofdateVerification inheritable property so the new Out-of-date feature can be disabled when needed.
+Hooked up the ShowLocalModifiedWarning inheritable properety to the GetLatest/Sync.
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2227 : Thu 04/03/2008 - 17:26:55.52 
+---------------------------------------------------- 
+Fixed:					
+ Fixed the Bless Dialog's bless target when blessing from another user's mailbox.
+ Fixed the Out-of-date check when blessing to bless targets.
+
+Added:					
+
+Removed:					
+ 
+ 
+
+---------------------------------------------------- 
+Version 3.0.4.2226 : Thu 04/03/2008 - 14:13:54.66 
+---------------------------------------------------- 
+Fixed:					
+
+Added:					
+Created new 'Admin Tools -> Update project for 3.1.4.X Drop' to walk previous library revisions and existing inbox assets.
+Changed the Out-of-date check to still compare a blank SyncRepositoryRevision in the event its a new asset.
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2224 : Thu 04/03/2008 - 12:34:41.97 
+---------------------------------------------------- 
+Fixed:					
+ Further bullet-proofed the GetLatest process. (Fixed a GetLatest crash)
+
+Added:					
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2223 : Thu 04/03/2008 - 11:34:29.75 
+---------------------------------------------------- 
+Fixed:					
+ Changed GetLatest to show the marque longer while it is completing some of the more intensive initialization queries.
+ Changed Bless Dialog to allow a bless target to bless an asset even though it's creator still owns the lock.
+ Changed Library's local file timestamp to use the pretty date.
+ Fixed obscure bug where bless target could cause a ghost database entry to be generated and cause subsequent imports of the asset to fail.
+
+Added:					
+ Added check to only pass the lock along with the asset if the current asset owner is the same as the lock owner.
+ Added check to see if the new blessed asset's creator is different than the inbox asset's creator before presenting the Out-of-date warning.
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2214 : Wed 04/02/2008 -  9:19:35.70 
+---------------------------------------------------- 
+Fixed:					
+Fixed Library's 'Edit' and 'Edit With' for both added assets, duplicated files, and unadded files.
+Fixed Library's 'Edit' and 'Edit With' to no longer get bogus locks on unadded files.
+Fixed Library's double-click for unadded files.
+Fixed Library's duplicate to always clear the ReadOnly flag.
+Changed EventViewer's timestamp to use pretty time
+
+Added:					
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2203 : Tue 04/01/2008 - 14:39:56.55 
+---------------------------------------------------- 
+Fixed:					
+Fixed a crash with the new GetLatest code when removing a local asset that was previously in the project.
+Fixed Progress dialogs to better handle large messages strings.
+Fixed Library to immediately select the new TreeView node and display a retrieving data message (Helpful for larger library lists).
+
+Added:					
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2199 : Tue 04/01/2008 - 11:57:38.72 
+---------------------------------------------------- 
+Fixed:					
+ made it so the user is not able to resize the progress dialog.
+ Fixed the sorting of the GetLatest Dialog's preview list.
+ Fixed the restamping of local assets in conjunction with the new smarter GetLatest logic.
+ Fixed a bug where the GetLatest dialog wasn't recaching the list of assets in the local updated tray.
+ Fixed bug where unchecking the filter checkbox in the GetLatest dialog wasn't properly reseting the filter causing unexpected syncs.
+
+Added:					
+ Added progress dialog to the new 'AdminTools -> FindNewerUnpostedRevisions'.
+ Added the new 'Admin Tools -> FixupPreviousLibraryRevisions' for new Library optimizations.
+ Improved Library's ListView population speeds.
+ Improved GetLatest Dialog's population speeds.
+ Added the local workspace assets to the GetLatest Dialog's preview list.
+ Improved GetLatest to never copy an incoming repository asset when it is listed in the local updated tray.
+ Improved the speed of the GetLatest dialog when selecting filters.
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2188 : Mon 03/31/2008 - 11:24:32.88 
+---------------------------------------------------- 
+Fixed:					
+ Fixed Library's 'Edit' and 'Edit With' for non added files.
+ Fixed new Out-of-date asset checking to not prevent a library checkin.
+ Fixed new intelligent asset syncing to respect assets marked SyncFiles=false.
+
+Added:					
+ Enhanced library's file status tracking to visually show when a file is Out-of-date with the server.
+ Added new Library file states that denote whether a file is 'Up-to-date' or 'Out-of-date' with the server.
+ Changed all remaining progress dialogs to show path/classification separate from filename/assetname.
+ Changed the Import project wizard to drop the parent root directory node.
+ Changed GetLatest progress dialogs to report multi-line progress.
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2180 : Fri 03/28/2008 - 17:33:16.40 
+---------------------------------------------------- 
+Fixed:					
+ Fixed GetLatest/Sync to not remove and recopy files that don't need to be changed between asset revisions.
+ Fixed: can bless assets that are copied into the users inbox
+
+Added:					
+ Added: Project tree dynamic lock refreshing
+ Enhanced GetLatest/Sync to always make sure to deposit modified files in the recycle bin if they need to be removed.
+ Added an additional verification prompt to the user if they say to overwrite a local modified file that is locked.
+ Improved file-level feedback to the user in the GetLatest/Sync results dialog.
+ Added optimizations to skip file copies when the dates are the same.
+ Improved the enabling/disabling of the OK button when manipulating tags in the GetLatest Dialog.
+ Added 'Reverted' keyword in GetLatest summary results when an asset is being reverted back to an earlier revision.
+
+Removed:					
+
+ 
+---------------------------------------------------- 
+Version 3.0.4.2174 : Wed 03/26/2008 - 18:12:55.37 
+---------------------------------------------------- 
+Fixed:					
+ Fixed the GetLatest Dialog to remember the filters and tags on a per workspace basis.
+ Fixed: Sync Filter error
+ Fixed: Locking must work the same in all Project level views as well as windows in MOG
+ Fixed Inbox Bless to correctly account for formulaic based sync targets when checking for colliding assets.
+ Fixed 'Configure Filters' in GetLatest to properly save the state of the 'Show Assets' checkbox.
+ Fixed a file bug bioware ran into.
+ Fixed: Icons not showing correctly in the reportWindow
+ Fixed crash in GetLatest Dialog when quickly selecting various tags.
+ Fixed crash in GetLatest Dialog when selecting another tag after scrolling the list view from another tag.
+ Changed GetLatest Dialog to force user to wait until the preview window has been populated for the given tag, filter or branch.
+ Fixed Library NonMog folder delete
+ Fixed GetLatest so it can properly overwrite local files marked as read only.
+
+Added:					
+ Added: Delete from Workspace called "Remove from list"
+ Added: Collapse Project Tree
+ Added: Lock / Unlock to library
+ Added: Report window for AdminToolsReportNewerUnpostedRevisions
+ Added: Save and load of reportWindow column positions, width, height and screen position
+ Added NonMOG folders to the library tree explorer
+ Changed the GetLatest Preview to use 'Revert' keyword for assets getting reverted to an earlier revision.
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2158 : Tue 03/25/2008 - 12:10:32.84 
+---------------------------------------------------- 
+Fixed:					
+ Fixed up the package creator dialog so it will select sync targets when you click on a classification. (issue 1120)
+ Fixed AutoUpdateLocal to also trigger from the Sent asset status.
+ Fixed: The classifications in the Sync view of the Project tab are not sorted. (issue 1148)
+ Fixed: In package management when you check to show platform specific assets it does not remember the next time you open it. (issue 1089)
+ Fixed: Double click on asset name to select from list of matches when importing (issue 1070)
+ changed the wording on the project removal confirmation dialog in the server manager. (issue 1126)
+
+Added:					
+ Added: Additional explorer support in the library (Duplicate, Rename)
+ Added new features for tracking and monitoring stale (Out-of-date) inbox assets.
+ Added new privilege for allowing a user to bless a stale (Out-of-date) inbox asset.
+ Added stale (Out-of-date) indicator in the bless confirmation dialog.
+ Added BlessedRepositoryRevision property for tracking the repository revision for a blessed asset.
+ Added SyncedRepositoryRevision property for tracking stale (Out-of-date) assets.
+ Added RippedTime property for tracking when an asset was last ripped.
+ Added ModifiedTime property for tracking when an asset was modified ripped.
+ Changed a few JobLabels to follow standard "Command.ComputerName.Timestamp"
+ Added ability to obtain the bless timestamp from the JobLabel.
+ Made it so you can't assign a package to be packaged into itself. (issue 1116)
+ Only allow package management on package assets. (issue 1115)
+ Added privilege checks to the places where we add classifications. (issue 1138)
+ Optimized the initializing of the project tree views.
+ Improved:  If you watch your local workspace with the MOG plugin on in FH and update local in MOG you get stuck revisioning and updating 
+ Added a privilege check on removing assets from projects. (issue 1137)
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2139 : Thu 03/20/2008 - 14:56:41.10 
+---------------------------------------------------- 
+Fixed:					
+ Fixed MOG_CommandLine when checking for rooted paths during an asset import.
+ Fixed:  Missing icons on LibraryListView because of incorrect lock checking logic
+ FIXED: Checkin will no longer mark the local asset ReadOnly when the user has specified to MaintainLock.
+ Fixed the setting of a classification's SyncTargetPath to properly obtain the classification tokens.
+ Fixed the advanced import asset dialog to properly handle inherited formulaic SyncTargetPaths.
+
+Added:					
+ Added bullet-proofing to ensure {Token.Substring(StartIndex)} will never exceeds the length of the token's string.
+ Added bullet-proofing to ensure {Token.Substring(StartIndex, Count)} will never exceeds the length of the token's string.
+ Added bullet-proofing to ensure {Token.Insert(StartIndex)} will never exceeds the length of the token's string.
+ Added bullet-proofing to ensure {Token.Remove(StartIndex)} will never exceeds the length of the token's string.
+ Added bullet-proofing to ensure {Token.Remove(StartIndex, Count)} will never exceeds the length of the token's string.
+
+Removed:					
+ Removed: The lastSync filter is apparently not necessary anymore, it should be deleted. (issue 1145)
+ 
+---------------------------------------------------- 
+Version 3.0.4.2134 : Wed 03/19/2008 - 16:44:28.14 
+---------------------------------------------------- 
+ Fixed minor issue when attempting to release another user's persistent lock.
+ Fixed crash with drag and dropping an classification.
+ Fixed crash with drag and dropping an asset.
+
+Added:					
+ New ported MOG server
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2127 : Tue 03/18/2008 - 18:06:59.33 
+---------------------------------------------------- 
+Fixed:					
+ Fixed the SendTo and CopyTo that was broken when the auto email notifications column.
+
+Added:					
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2124 : Tue 03/18/2008 - 17:16:12.50 
+---------------------------------------------------- 
+Fixed:					
+ Fixed a simple bullet-proofing crash in the Library when trying to obtain the locked status of an asset.
+
+Added:					
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2121 : Tue 03/18/2008 - 13:19:25.42 
+---------------------------------------------------- 
+Fixed:					
+ Fixed: To avoid confusion it'd be nice if you couldn't sync while you are configuring filters. (issue 1143)
+ Fixed crash when a user goes to use the filters for the very first time.
+
+Added:					
+ Included additional help in MOG_Commandline on how to sync a single asset.
+
+Removed:					
+ Suppressed "Command not implemented warning" because users never needs to know about that.
+ 
+---------------------------------------------------- 
+Version 3.0.4.2117 : Mon 03/17/2008 - 18:03:11.54 
+---------------------------------------------------- 
+Fixed:					
+ Changed Server to check the connection's options before assuming it always wants to know about persistent locks.
+
+Added:					
+ Added: Easy access sync filter combobox to the SyncLatestForm
+ Added: Assets in Local Explorer are not sorted. Bioware is starting to use this feature. (issue 1136)
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2113 : Fri 03/14/2008 - 16:15:29.58 
+---------------------------------------------------- 
+Fixed:					
+
+Added:					
+
+Removed:					
+ Nevermind, removed the major version change...We need to fix the Editor to be more graceful before we attempt this again!
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2112 : Fri 03/14/2008 - 14:48:57.58 
+---------------------------------------------------- 
+Fixed:					
+ Fixed: When configuring sync filters and the drop down is blank you get exceptions when you hit delete and cancel. (issue 1133)
+
+Added:					
+ Incremented the Major Version or else UnrealEd would get 'PersistentLockNotify command not implemented' errors.
+ Added some additional output for sync to make it easer for users to figure out how to use sync
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2103 : Thu 03/13/2008 - 14:55:49.72 
+---------------------------------------------------- 
+Fixed:					
+ Fixed Obscure startup threading issue when reading network packages from the MOG Server.
+
+Added:					
+ Added: View properties of toolbox items even if user can't edit (issue 918)
+ Added: Asset files to the SyncLatest filter tree
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2097 : Wed 03/12/2008 - 17:31:56.45 
+---------------------------------------------------- 
+Fixed:					
+ Fixed: SMTP property not saving
+ Fixed: 0001066: In the Branches tab of project configuration there needs to be labels on the two sections top and bottom. (issue 1066)
+ Fixed: 0001071: ViewOtherUsersInbox is not hooked up. (issue 1071)
+ Fixed: 0001080: ConfigureUpdateFilterPromotions privilege still works while set to false. (issue 1080)
+ Fixed: 0001078: CreateBranch privilege still works while false. (issue 1078)
+ Fixed: 0001077: requestBuild privilege still works while set to false (issue 1077)
+ Fixed Bug 1076: AddNewUser privilege still works even when false. (issue 1076)
+ Fixed bug #1062: You should be able to right click anywhere in the package management dialogue and add package. (issue 1062)
+ Fixed: We need to handle UNC paths correctly in the commandline (issue 1108)
+ Fixed: When you try to sync to a Tag, the ok button isn't available until you check and uncheck the box (issue 1113)
+ Fixed: If you watch your local workspace with the MOG plugin on in FH and update local in MOG you get stuck revisioning and updating (issue 1011)
+ Fixed: The GetLatest dialog will always appear off screen if you drag it off and press enter (issue 1006)
+ Fixed MOG to allow the purging of an old previously removed asset from the archive tree ignoring a user's local workspace references. (issue 1112)
+ Fixed server from broadcasting bogus 'No Slave' warning messages.
+
+Added:					
+ Added LockTracker for tracking persistent locks within a MOG Command Manager.
+ Added LockTracker to the editor so it can now track persistent locks.
+ Changed MOG Server to transmit persistent lock notifies to editors as well as the clients.
+ Added: Comment pre-populating for check in/out in library 
+ Added: EmailNotification property 
+ Added: BlessInfo form saver and loaders for UI layout
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2028 : Fri 02/08/2008 - 14:56:31.95 
+---------------------------------------------------- 
+Fixed:					
+ Fixed the AssetImportWizard to show the user the name of the asset being imported anytime the earlier wizard tabs get skipped.  issue 1093
+
+Added:					
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.4.2024 : Fri 02/08/2008 - 12:07:27.25 
+---------------------------------------------------- 
+Fixed:					
+ Fixed: You are unable to show platform specific assets when importing them in either wizard or advanced. Issue 1094
+
+Added:					
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.3.2006 : Thu 02/07/2008 - 11:44:06.95 
+---------------------------------------------------- 
+Fixed:					
+ Improved the logic when fixing the Privileges filename during the transition of running both new and old Clients.
+ Fixed Bridge to properly indicate the package assignment was removed when the asset subsequently gets removed from the project. issue 1088
+ Fixed issue where project trees were hiding platform-specific packages. issue 1087
+ Fixed 'Overwrite Local File' prompt to properly exclude assets sitting in the user's local updated tray to avoid erroneous prompts when the user just blessed the very asset they are trying to update to. issue 860
+ Fixed ExploreAssetDirectory context menu item to respect the correct privilege.
+ Fixed LaunchSlave context menu item to respect the correct privilege. 
+
+Added:					
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.3.1986 : Mon 02/04/2008 - 15:01:51.46 
+---------------------------------------------------- 
+Fixed:					
+ Reverted network socket code back to original algorithm because the new way introduced some instability.
+   Simply increased the socket buffers to counteract the previous larger than 8k packet length issue.
+
+Added:					
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.3.1976 : Thu 01/31/2008 - 17:05:43.35 
+---------------------------------------------------- 
+Fixed:					
+ Fixed Package Management Dialog to properly show Package Assignments with a new PackageObject at the root of a package. issue 1068
+ Fixed minor issue with LOD confusing the MOG_Bridge delete workflow for assets contained within a package object.
+ Fixed the MOG_Bridge Delete workflow to include PackageObject assets along with their contained assets.
+ Changed MOG_Bridge to respect the name of the ImportPendingObject's AssetLabel instead of defaulting to the filename which fixes the problems introduced when an artist decides to rename an object at import time. issue 933
+ Fixed Crash when the CreatePackage wizard is canceled during the importation of an asset using the MOG_Bridge. issue 1003 
+
+Added:					
+ Added LOD autodetection and management routines to MOG_Bridge.
+ Hooked up the MOG_Bridge Delete workflow for LOD objects.
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.2.1964 : Tue 01/29/2008 - 18:08:44.58 
+---------------------------------------------------- 
+Fixed:					
+ Fixed NetworkSockets to properly handle MOG Command Packets that are larger than the socket's buffer.
+ Fixed bug with auto-import where a shorter asset name could be mis-matched with a longer asset name.
+ Fixed the server when receiving larger than 8k network packets (UE3 Editor reporting error messages back to server).
+
+Added:					
+ Added a file time stamp column within the library issue 1059
+ Added ProgressDialog.Hidden = true to the commandline -q option
+ Added preliminary Delete workflow to the MOG_Bridge.
+ Added safeguard so MOG_ControllerInbox::MoveToBox() will never move a blessed asset out of the Repository.
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.2.1951 : Mon 01/28/2008 - 14:49:36.83 
+---------------------------------------------------- 
+Fixed:					
+ Fixed ability to have trailing token commands off the output of another token command.
+
+Added:					
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.2.1943 : Mon 01/28/2008 - 10:10:22.96 
+---------------------------------------------------- 
+Fixed:					
+ Fixed Server's slave management to never do its default auto launching logic when a specific [ValidSlaves] section has been defined.
+ Fixed several incorrectly spelled instances of 'Workspace'.
+ Fixed asset to update its Group property when its package assignment changes in the package management dialog. issue 1008
+ Fixed library to mark already existing local files within the library as read only if they are added to the library. issue 1033
+ Fixed project's archive tree to properly show the contents of a specific revision of a package. issue 1047
+ Fixed ContextMenu assert when trying to obtain/release a lock on a specific revision of an asset in the archive tree.
+ Fixed issue 1043 where Client would automatically initiate a package merge at startup despite the auto package button was unchecked.
+ Fixed issue 1039 where MOG shouldn't attempt to unpackage an asset with the 'Unpackaged' state.
+ Fixed the Client to preserve the 'Unpackaged' state until it actually gets packaged and really needs to be unpackaged.
+ Fixed: Bad userPrefs.ini causing MOG_Client to crash.
+
+Added:					
+ Added new MOG_Token commands for manipulating resolved token strings.
+ Added a better unhandled exception dialog prompt in the DirectorySet class which is used by the local workspace explorer tree.
+ Added check to repair the project's incorrectly named 'Privileges.Info' file.
+ Enhanced PackageError reporting to prevent runaway package looping.  issue 1014
+
+Removed:					 
+ 
+---------------------------------------------------- 
+Version 3.0.2.1892 : Thu 01/17/2008 - 16:37:20.03 
+---------------------------------------------------- 
+Fixed:					
+ Removed mLicenseRequired on some of the common slave related commands. issue 1037
+ Fixed bug in archive tree when an artist attempts to lock a revision of an asset. issue 1040
+ Fixed the misspelling of 'Priviledge' to the correct spelling of 'Privilege' issue 1036
+
+Added:					
+
+Removed:					
+ 
+ 
+---------------------------------------------------- 
+Version 3.0.2.1868 : Tue 01/08/2008 - 13:06:55.84 
+---------------------------------------------------- 
+Fixed:					
+ fixed a crash that occurred when showing the contextmenu in a generate report window of an unlicensed mog client.
+ Fixed bug 1022: removing from project from library tab confusing text issue 1022
+ Fixed: When you hit the GetLatest it stays as an hourglass until you move the mouse. issue 1010
+
+Added:					
+ Added capability for the PackageCreator to make a new package for every platform all at once.  Oh man!!!
+
+Removed:					
+ Removed admin tools options from the synctarget treeview. issue 1007
+ 
+---------------------------------------------------- 
+Version 3.0.2.1863 : Fri 01/04/2008 - 13:30:06.52 
+---------------------------------------------------- 
+Fixed:					
+ Fixed: EventViewer Dump to file
+ Fixed: EventViewer ugly ascending and descending arrows.
+ Fixed: Right clicking on a LateResolver causes an error issue 1019
+ Fixed Exception when promoting or demoting a ToolBox control
+
+Added:					
+ Added: EventViewer send to Mogware
+ Added: EventViewer save and load of size and position property
+ Added: Submenu with all the available platforms in the project to the create package context menu item when the ShowPlatformSpecific checkbox is checked.
+ Added a saved pref for the selected tab on the connections tab
+ Enabled the platform-specific checkbox in the packagemanagement treeview.
+
+Removed:					
+ 

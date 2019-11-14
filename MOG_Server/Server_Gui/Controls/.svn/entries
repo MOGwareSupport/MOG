@@ -1,0 +1,34 @@
+9
+
+dir
+3693
+file:///\x5cNemesis/SVN/MOG.3.0/MOG_Server/Server_Gui/Controls
+file:///\x5cNemesis/SVN
+
+
+
+2008-06-26T22:50:33.968632Z
+2713
+johnren
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+6f4c6ef8-4a57-ca48-891f-73a624405d5e
+
+MOGIniSelector
+dir
+
+SQLConnectControl
+dir
+

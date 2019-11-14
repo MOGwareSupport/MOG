@@ -1,0 +1,73 @@
+9
+
+dir
+3693
+file:///\x5cNemesis/SVN/MOG.3.0/MOG_Client/MOG_ControlsLibrary/Common
+file:///\x5cNemesis/SVN
+
+
+
+2009-10-07T06:36:12.138522Z
+3586
+johnren
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+6f4c6ef8-4a57-ca48-891f-73a624405d5e
+
+MogControl_RepositoryTreeViews
+dir
+
+MogUtils_SkinManager
+dir
+
+MogControl_GameDataDestinationTreeView
+dir
+
+MogControl_PictureBoxEx
+dir
+
+MogControl_LocalBranchTreeView
+dir
+
+MogControl_LibraryExplorer
+dir
+
+MogControl_ViewTokenTextBox
+dir
+
+MogControl_LibraryListView
+dir
+
+MogUtil_Sql
+dir
+
+MogControl_Wizard
+dir
+
+MogControl_LocalWorkspaceTab
+dir
+
+MogForm_AutomatedTesting
+dir
+
+MogControl_PriviledgesChangeForm
+dir
+
+MOG_ContextMenu
+dir
+
+MogControl_TaskEditor
+dir
+

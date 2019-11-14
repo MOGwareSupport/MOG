@@ -1,0 +1,97 @@
+9
+
+dir
+3693
+file:///\x5cNemesis/SVN/MOG.3.0/MOG_Server/Server_Gui
+file:///\x5cNemesis/SVN
+
+
+
+2008-06-26T22:50:33.968632Z
+2713
+johnren
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+6f4c6ef8-4a57-ca48-891f-73a624405d5e
+
+guiPendingCommands.cs
+file
+
+
+
+
+2008-06-25T21:15:56.066075Z
+153a57a9ba977b082b2753c0413fc941
+2008-06-25T23:54:45.084727Z
+2693
+johnren
+
+guiConfigurationsHelpers
+dir
+
+Controls
+dir
+
+guiLocks.cs
+file
+
+
+
+
+2008-05-08T18:00:21.602241Z
+98277ec44c8e627ca2a2008005f285b4
+2008-03-19T22:33:33.717157Z
+2132
+kier
+
+Forms
+dir
+
+Configuration.cs
+file
+
+
+
+
+2008-05-08T18:00:21.617865Z
+515bf87be667ec66bcc5670cc3d6b88a
+2006-10-11T21:44:12.271471Z
+1
+kier
+
+Monitor.cs
+file
+
+
+
+
+2008-06-23T22:14:51.046062Z
+f433f7c60ab80dab36eb379720595760
+2008-06-24T17:15:41.201139Z
+2679
+johnren
+
+guiLogs.cs
+file
+
+
+
+
+2008-05-08T18:00:21.617865Z
+84961d85e9b432616ab8e85c456ff0a1
+2006-10-11T21:44:12.271471Z
+1
+kier
+

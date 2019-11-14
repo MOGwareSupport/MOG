@@ -1,0 +1,640 @@
+using System;
+using System.IO;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Collections;
+using System.Diagnostics;
+
+using MOG;
+using MOG.INI;
+using MOG.USER;
+using MOG.DOSUTILS;
+using MOG.COMMAND;
+using MOG.FILENAME;
+using MOG.PROJECT;
+using MOG.PROPERTIES;
+using MOG.REPORT;
+using MOG.PROMPT;
+using MOG.CONTROLLER.CONTROLLERPROJECT;
+using MOG.CONTROLLER.CONTROLLERSYSTEM;
+using MOG_ControlsLibrary;
+
+using Etier.IconHelper;
+using Tst;
+
+
+namespace MOG_ServerManager
+{
+	/// <summary>
+	/// Summary description for guiAssets.
+	/// </summary>
+	public class MogUtil_AssetIcons
+	{
+		static public MOG_Command mLockHolder;
+
+		#region Variables, Properties
+		// Asset icon variables
+		static private ImageList mAssetTypeImages	= new ImageList();					// Holds all the asset type icons
+		static private TstDictionary mAssetTypes	= new TstDictionary();				// This will be a look-up table for the imageList allowing us to look up types and get the correct icon
+
+		// State icon variables
+		static private ImageList mStateTypeImages	= new ImageList();					// Holds all the asset state icons
+		static private TstDictionary mStateTypes	= new TstDictionary();				// This will be a look-up table for the imageList allowing us to look up states and get the correct icon
+
+		// File icon variables
+			// Win32 wrapper class that returns our indices and adds images for files at runtime
+		static private IconListManager mFileTypeManager;
+		
+		/// <summary>
+		/// ImagesList for all cached classification icons
+		/// </summary>
+		static public ImageList Images { get{return mAssetTypeImages;} set{mAssetTypeImages = value;}}
+		/// <summary>
+		/// ArrayList of all the classes that correspond with the cached images
+		/// </summary>
+		static private TstDictionary TypeNames { get{return mAssetTypes;} set{mAssetTypes = value;}}
+		
+		/// <summary>
+		/// ImageList for all cached state icons
+		/// </summary>
+		static public ImageList StateImages { get{return mStateTypeImages;} set{mStateTypeImages = value;}}
+		/// <summary>
+		/// Array list that corresponds to all cached state icons
+		/// </summary>
+		static private TstDictionary StateNames { get{return mStateTypes;} set{mStateTypes = value;}}
+		#endregion Variables, Properties
+
+		/// <summary>
+		/// Base constructor
+		/// </summary>
+		public MogUtil_AssetIcons()
+		{
+		}
+
+		/// <summary>
+		/// Reset the currently loaded project icons preparatory to loading a new set
+		/// </summary>
+		static public void ClassIconsClear()
+		{			
+			mAssetTypeImages = new ImageList();	
+			mAssetTypes = new TstDictionary();
+
+			mStateTypeImages = new ImageList();
+			mStateTypes = new TstDictionary();
+		}
+
+		/// <summary> InitializeAssetIcons
+		/// Loads all the bmp's specified in the asset declarations
+		/// in the Project.ini files.  Each bmp is added to a
+		/// list allong with its key added to a corresponding list
+		/// for later searching.
+		/// </summary>
+		static public void ClassIconInitialize()
+		{
+			// Check to see if our project is loaded
+			if (!MOG_ControllerProject.IsProject())
+			{
+				return;
+			}
+
+			// Only allow population of the images array once
+			if (mAssetTypes.Count > 0)
+			{
+				return;
+			}
+			
+			// Add the active item icon first
+			// Get the image
+			AddIcon("Images", "BaseNode.bmp", "dot");
+			AddIcon("Images", "Group.bmp", "group");
+			AddIcon("Images", "FileLocked.png", "locked");
+
+			//mAssetTypeImages.TransparentColor = Color.Magenta;
+			mAssetTypeImages.ColorDepth = ColorDepth.Depth32Bit;
+
+			// Initialize state icons
+			FileInfo []stateImages = DosUtils.FileGetList(MOG_ControllerSystem.LocateTool("Images\\States", ""), "*.bmp");
+
+			foreach (FileInfo stateImage in stateImages)
+			{
+				LoadRawIcon(mStateTypeImages, mStateTypes, stateImage.FullName.ToLower(), Path.GetFileNameWithoutExtension(stateImage.Name).ToLower());
+			}
+
+			// Initialize state icons
+			stateImages = DosUtils.FileGetList(MOG_ControllerSystem.LocateTool("Images\\States", ""), "*.png");
+
+			foreach (FileInfo stateImage in stateImages)
+			{
+				LoadRawIcon(mStateTypeImages, mStateTypes, stateImage.FullName.ToLower(), Path.GetFileNameWithoutExtension(stateImage.Name).ToLower());
+			}
+
+			// Load our file icons as small icons
+			mFileTypeManager = new IconListManager( mAssetTypeImages, IconReader.IconSize.Small );
+		}
+
+		static private void LoadRawIcon(ImageList myImages, TstDictionary myImageNames, string imageFileName, string imageName)
+		{
+			// Make sure that the icon file exists
+			if (DosUtils.FileExist(imageFileName))
+			{
+				// Get the image
+				Image myImage = new Bitmap(imageFileName);
+
+				// Add the image and the type to the arrayLists
+				myImages.Images.Add(myImage);
+				myImageNames.Add(imageName, myImages.Images.Count - 1);
+				//Debug.WriteLine(imageName + ":" + (myImages.Images.Count - 1), "LoadIcon"); 
+			}			
+		}
+
+		static private int LoadIcon(string imageFileName, string assetClassName)
+		{
+			try
+			{
+				// Load the icon specified by the Icon= key
+				string iconName = imageFileName;
+			
+				// Make sure this is a full path, if not append the tools directory to it?
+				iconName = MOG_ControllerSystem.LocateTool(imageFileName);
+
+				// Make sure that the icon file exists
+				if (iconName.Length > 0 && DosUtils.FileExist(iconName))
+				{
+					// Get the image
+					Image myImage = new Bitmap(iconName);
+
+					// Add the image and the type to the arrayLists
+					mAssetTypeImages.Images.Add(myImage);
+					mAssetTypes.Add(assetClassName, mAssetTypeImages.Images.Count - 1);
+
+					return mAssetTypeImages.Images.Count -1;
+				}
+			}
+			catch(Exception e)
+			{
+				MOG_Report.ReportMessage("Load Icon", e.Message, e.StackTrace, MOG_ALERT_LEVEL.CRITICAL);
+			}
+
+			return 0;
+		}
+
+		static public void ExplorerIconInitialize()
+		{
+			// Only allow population of the images array once
+			if (mAssetTypes.Count > 0)
+			{
+				return;
+			}
+			
+			// Add the active item icon first
+			// Get the image
+			AddIcon("Images", "BaseNode.bmp", "dot");
+			AddIcon("Images", "Group.bmp", "group");
+
+			//mAssetTypeImages.TransparentColor = Color.Magenta;
+			mAssetTypeImages.ColorDepth = ColorDepth.Depth32Bit;
+
+			// Load our file icons as small icons
+			mFileTypeManager = new IconListManager( mAssetTypeImages, IconReader.IconSize.Small );
+		}
+
+		static public bool AddIcon(string directory, string filename, string key)
+		{
+			Tst.TstDictionaryEntry node = mAssetTypes.Find(key);
+			if (node == null)
+			{
+				// Add the active item icon first
+				// Get the image
+				if (DosUtils.FileExist(MOG_ControllerSystem.LocateTool(directory, filename)))
+				{
+					// Get the group image
+					Image myImage = new Bitmap(MOG_ControllerSystem.LocateTool(directory, filename));
+
+					// Add the image and the type to the arrayLists
+					mAssetTypeImages.Images.Add(myImage);
+					mAssetTypes.Add(key, mAssetTypeImages.Images.Count - 1);
+
+					return true;
+				}
+			}
+			return false;
+		}
+
+		static public bool AddIcon(Image icon, string key)
+		{
+			Tst.TstDictionaryEntry node = mAssetTypes.Find(key);
+			if (node == null)
+			{
+				// Add the image and the type to the arrayLists
+				mAssetTypeImages.Images.Add(icon);
+				mAssetTypes.Add(key, mAssetTypeImages.Images.Count - 1);
+				return true;
+			}
+			return false;
+		}
+
+		/// <summary>
+		/// Gets the MOGAssetStatus for a given status name
+		/// </summary>
+		static public int GetStatusIndex(string status)
+		{
+			// Loops through statusInfos ArrayList in order
+			// to find StatusInfo.Text that matches parameter 
+			// 'status'
+			try
+			{
+				Tst.TstDictionaryEntry node = mStateTypes.Find(status.ToLower());
+				if (node != null)
+				{
+					//Debug.WriteLine(status + ":" + ((int)node.Value).ToString(), "GetStatusIndex");				
+					return (int)node.Value;
+				}
+			}
+			catch
+			{
+			}
+
+			// If there was no match, return error
+			return GetStatusIndex("unknown");
+		}
+
+		static public int GetAssetIconIndex(string filename)
+		{
+			return GetAssetIconIndex(filename, null);
+		}
+
+		static public int GetAssetIconIndex(string filename, MOG_Properties properties)
+		{
+			// Construct a filename
+			MOG_Filename file = null;
+			try
+			{
+				file = new MOG_Filename(filename);
+			}
+			catch(Exception e)
+			{
+				e.ToString();
+				return 0;
+			}
+
+			string assetName = "default";
+
+			switch(file.GetFilenameType())
+			{
+				case MOG_FILENAME_TYPE.MOG_FILENAME_Asset:
+					assetName = file.GetAssetClassification();
+					break;
+				case MOG_FILENAME_TYPE.MOG_FILENAME_Group:
+					assetName = "group";
+					break;
+				default:
+					assetName = filename;
+					break;
+			}
+
+			try
+			{
+				TstDictionaryEntry node = mAssetTypes.Find(assetName + "_ASSETICON");
+				if (node != null && node.IsKey)
+				{
+					return (int)node.Value;
+				}
+				else
+				{
+					if (properties == null)
+					{
+						// If we didn't get anything, we need to load this icon into our array
+						properties = new MOG_Properties(assetName);
+					}
+					return MogUtil_AssetIcons.LoadIcon(properties.AssetIcon, assetName + "_ASSETICON");
+				}
+			}
+			catch
+			{
+				return 0;
+			}
+		}
+
+		static public int GetClassIconIndex(string filename)
+		{
+			return GetClassIconIndex(filename, null);
+		}
+
+		/// <summary> SetAssetIcon
+		/// Searches through mAssetTypes to find the matching key with 
+		/// that of the filename.  Then returns the index
+		/// </summary>
+		/// <param name="filename"></param>
+		/// <returns>index of icon in the mAssetTypeImages list</returns>
+		static public int GetClassIconIndex(string filename, MOG_Properties properties)
+		{
+			// Construct a filename
+			MOG_Filename file = null;
+			try
+			{
+				file = new MOG_Filename(filename);
+			}
+			catch(Exception e)
+			{
+				e.ToString();
+				return 0;
+			}
+
+			string classification;
+
+			switch(file.GetFilenameType())
+			{
+				case MOG_FILENAME_TYPE.MOG_FILENAME_Asset:
+					classification = file.GetAssetClassification();
+					break;
+				case MOG_FILENAME_TYPE.MOG_FILENAME_Group:
+					classification = "group";
+					break;
+				default:
+					classification = filename;
+					break;
+			}
+
+			try
+			{
+				TstDictionaryEntry node = mAssetTypes.Find(classification);
+				if (node != null && node.IsKey)
+				{
+					return (int)node.Value;
+				}
+				else
+				{
+					if (properties == null)
+					{
+						// If we didn't get anything, we need to load this icon into our array
+						properties = new MOG_Properties(classification);
+					}
+					return MogUtil_AssetIcons.LoadIcon(properties.ClassIcon, classification);
+				}
+			}
+			catch
+			{
+				return 0;
+			}
+		} // end ()
+
+		static public int GetLockedIcon(MOG_Filename file)
+		{
+			try
+			{
+				// Check to see if we can find this loced icon in our cache
+				TstDictionaryEntry assetLocked = mAssetTypes.Find(file.GetAssetClassification() + "_locked");
+				if (assetLocked != null)
+				{
+					// Yup, return the index
+					return (int)assetLocked.Value;
+				}
+				else
+				{
+					// Nope, We are going to have to create it
+
+					// Setup some new containers
+					Bitmap myImage = null;
+					Bitmap lockSource = null;
+					Bitmap source = null;
+
+					// Can we find the locked image
+					TstDictionaryEntry nodeLocked = mAssetTypes.Find("locked");
+					if (nodeLocked != null && nodeLocked.IsKey)
+					{
+						// Great, get a copy of that
+						lockSource = (Bitmap)mAssetTypeImages.Images[(int)nodeLocked.Value];
+
+						// Can we find the class icon for this asset
+						TstDictionaryEntry nodeSource = mAssetTypes.Find(file.GetAssetClassification());
+						if (nodeSource != null && nodeSource.IsKey)
+						{
+							// Great get a copy of that
+							source = (Bitmap)mAssetTypeImages.Images[(int)nodeSource.Value];
+						}
+						else
+						{
+							// If we didn't get anything, we need to load this icon into our array
+							MOG_Properties properties = new MOG_Properties(file.GetAssetClassification());
+							source = (Bitmap)mAssetTypeImages.Images[MogUtil_AssetIcons.LoadIcon(properties.ClassIcon, file.GetAssetClassification())];
+						}
+
+						// Ok, if we got a lockSource and a class source icon, lets attempt to overlay them
+						if (source != null && lockSource != null)
+						{
+							myImage = BitmapManipulator.OverlayBitmap(source, lockSource, 100, BitmapManipulator.ImageCornerEnum.BottomRight);
+						}
+
+						// Did the overlay work?
+						if (myImage != null)
+						{
+							// Add the image and the type to the arrayLists
+							mAssetTypeImages.Images.Add(myImage);
+							mAssetTypes.Add(file.GetAssetClassification() + "_locked", mAssetTypeImages.Images.Count - 1);
+
+							return mAssetTypeImages.Images.Count -1;
+						}
+					}
+					else
+					{
+						// Try to just turn the source icon red or something
+						string message = "We could not locate the (FileLocked.png)lock icon! Make sure that it is located in one of your images directories within the MOG repository!";
+						MOG_Report.ReportMessage("Load Icon", message, Environment.StackTrace, MOG_ALERT_LEVEL.ERROR);
+					}
+				}
+			}
+			catch(Exception e)
+			{
+				MOG_Report.ReportMessage("Get Locked Icon", e.Message, e.StackTrace, MOG_ALERT_LEVEL.CRITICAL);
+			}
+
+			return 0;
+		}
+
+		static public int GetLockedAssetIcon(MOG_Filename file)
+		{
+			try
+			{
+				// Check to see if we can find this loced icon in our cache
+				TstDictionaryEntry assetLocked = mAssetTypes.Find(file.GetAssetClassification() + "ASSETICON_locked");
+				if (assetLocked != null)
+				{
+					// Yup, return the index
+					return (int)assetLocked.Value;
+				}
+				else
+				{
+					// Nope, We are going to have to create it
+
+					// Setup some new containers
+					Bitmap myImage = null;
+					Bitmap lockSource = null;
+					Bitmap source = null;
+
+					// Can we find the locked image
+					TstDictionaryEntry nodeLocked = mAssetTypes.Find("locked");
+					if (nodeLocked != null && nodeLocked.IsKey)
+					{
+						// Great, get a copy of that
+						lockSource = (Bitmap)mAssetTypeImages.Images[(int)nodeLocked.Value];
+
+						// Can we find the class icon for this asset
+						TstDictionaryEntry nodeSource = mAssetTypes.Find(file.GetAssetClassification() + "_ASSETICON");
+						if (nodeSource != null && nodeSource.IsKey)
+						{
+							// Great get a copy of that
+							source = (Bitmap)mAssetTypeImages.Images[(int)nodeSource.Value];
+						}
+						else
+						{
+							// If we didn't get anything, we need to load this icon into our array
+							MOG_Properties properties = new MOG_Properties(file.GetAssetClassification());
+							source = (Bitmap)mAssetTypeImages.Images[MogUtil_AssetIcons.LoadIcon(properties.AssetIcon, file.GetAssetClassification() + "_ASSETICON")];
+						}
+
+						// Ok, if we got a lockSource and a class source icon, lets attempt to overlay them
+						if (source != null && lockSource != null)
+						{
+							myImage = BitmapManipulator.OverlayBitmap(source, lockSource, 100, BitmapManipulator.ImageCornerEnum.BottomRight);
+						}
+
+						// Did the overlay work?
+						if (myImage != null)
+						{
+							// Add the image and the type to the arrayLists
+							mAssetTypeImages.Images.Add(myImage);
+							mAssetTypes.Add(file.GetAssetClassification() + "ASSETICON_locked", mAssetTypeImages.Images.Count - 1);
+
+							return mAssetTypeImages.Images.Count -1;
+						}
+					}
+					else
+					{
+						// Try to just turn the source icon red or something
+						string message = "We could not locate the (FileLocked.png)lock icon! Make sure that it is located in one of your images directories within the MOG repository!";
+						MOG_Report.ReportMessage("Load Icon", message, "No StackTrace available", MOG_ALERT_LEVEL.ERROR);
+					}
+				}
+			}
+			catch(Exception e)
+			{
+				MOG_Report.ReportMessage("Get Locked Icon", e.Message, e.StackTrace, MOG_ALERT_LEVEL.CRITICAL);
+			}
+
+			return 0;
+		}
+
+
+		static public int GetLockedBinaryIcon(string filename)
+		{
+			try
+			{
+				// Check to see if we can find this loced icon in our cache
+				TstDictionaryEntry assetLocked = mAssetTypes.Find(Path.GetFileName(filename) + "_locked");
+				if (assetLocked != null && assetLocked.IsKey)
+				{
+					// Yup, return the index
+					return (int)assetLocked.Value;
+				}
+				else
+				{
+					// Nope, We are going to have to create it
+
+					// Setup some new containers
+					Bitmap newLockedIcon = null;
+					Bitmap lockIconSource = null;
+					Bitmap assetIconSource = null;
+
+				
+					// Can we find the locked image
+					TstDictionaryEntry nodeLocked = mAssetTypes.Find("locked");
+					if (nodeLocked != null && nodeLocked.IsKey)
+					{
+						// Great, get a copy of that
+						lockIconSource = (Bitmap)mAssetTypeImages.Images[(int)nodeLocked.Value];
+
+						// Now try and get the icon of this asset
+						// Have we seen this type of asset by its extension?
+						if (mFileTypeManager.ExtensionListHasKey(filename))
+						{
+							// Great get a copy of that
+							assetIconSource = (Bitmap)mFileTypeManager.GetImage(filename);
+						}
+						else
+						{
+							// No, ok try and add it from the file its self
+							if (File.Exists(filename))
+							{
+								mFileTypeManager.AddFileIcon(filename);
+								assetIconSource = (Bitmap)mFileTypeManager.GetImage(filename);
+							}
+							else
+							{
+								// Use the default icon
+								assetIconSource = (Bitmap)mAssetTypeImages.Images[0];
+							}
+						}
+
+						// Ok, if we got a lockSource and a class source icon, lets attempt to overlay them
+						if (assetIconSource != null && lockIconSource != null)
+						{
+							newLockedIcon = BitmapManipulator.OverlayBitmap(assetIconSource, lockIconSource, 100, BitmapManipulator.ImageCornerEnum.BottomRight);
+						}
+
+						// Did the overlay work?
+						if (newLockedIcon != null)
+						{
+							// Add the image and the type to the arrayLists
+							mAssetTypeImages.Images.Add(newLockedIcon);
+							mAssetTypes.Add(Path.GetFileName(filename) + "_locked", mAssetTypeImages.Images.Count - 1);
+
+							return mAssetTypeImages.Images.Count -1;
+						}
+					}
+				}
+			}
+			catch(Exception e)
+			{
+				MOG_Report.ReportMessage("Get Locked Binary Icon", e.Message, e.StackTrace, MOG_ALERT_LEVEL.CRITICAL);
+			}
+
+			return 0;
+		}
+
+		/// <summary>
+		/// Gets the icon for a file, returns GetClassIconIndex() if filename is not fully qualifed.
+		/// </summary>
+		/// <param name="filename">Fully qualified Windows filename of the file to be given an icon</param>
+		/// <returns>Index of small icon for the file</returns>
+		static public int GetFileIconIndex( string filename )
+		{
+			try
+			{
+				if (mFileTypeManager == null)
+				{
+					mFileTypeManager = new IconListManager( mAssetTypeImages, IconReader.IconSize.Small );
+				}
+
+				int returnInt = 0;
+
+				// Try getting a File Icon
+				if (File.Exists(filename))
+				{
+					returnInt = mFileTypeManager.AddFileIcon( filename );
+				}
+				
+				// If we got the default index, return our Class Icon index
+				if( returnInt == 0 )
+					return GetAssetIconIndex( filename, null );
+				else
+					return returnInt;
+			}
+			catch( Exception e )
+			{
+				// If we didn't have a valid, qualified filename, return Class Icon index
+				e.ToString();  // This line for debug purposes (keeps VS.NET from warning use that e* is not used)
+				return GetClassIconIndex( filename, null );
+			}
+		}
+	}
+}

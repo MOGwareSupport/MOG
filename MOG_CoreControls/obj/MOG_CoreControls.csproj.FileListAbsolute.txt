@@ -1,0 +1,16 @@
+C:\Projects\MOG.3.0\MOG_CoreControls\bin\Debug\MOG_CoreControls.dll
+C:\Projects\MOG.3.0\MOG_CoreControls\bin\Debug\MOG_CoreControls.pdb
+C:\Projects\MOG.3.0\MOG_CoreControls\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\MOG.3.0\MOG_CoreControls\obj\Debug\MOG_CoreControls.MOG_XpProgressBar.resources
+C:\Projects\MOG.3.0\MOG_CoreControls\obj\Debug\MOG_CoreControls.ProgressDialog.resources
+C:\Projects\MOG.3.0\MOG_CoreControls\obj\Debug\MOG_CoreControls.csproj.GenerateResource.Cache
+C:\Projects\MOG.3.0\MOG_CoreControls\obj\Debug\MOG_CoreControls.dll
+C:\Projects\MOG.3.0\MOG_CoreControls\obj\Debug\MOG_CoreControls.pdb
+C:\Projects\MOG.3.0\MOG_CoreControls\bin\Release\MOG_CoreControls.dll
+C:\Projects\MOG.3.0\MOG_CoreControls\bin\Release\MOG_CoreControls.pdb
+C:\Projects\MOG.3.0\MOG_CoreControls\obj\Release\ResolveAssemblyReference.cache
+C:\Projects\MOG.3.0\MOG_CoreControls\obj\Release\MOG_CoreControls.MOG_XpProgressBar.resources
+C:\Projects\MOG.3.0\MOG_CoreControls\obj\Release\MOG_CoreControls.ProgressDialog.resources
+C:\Projects\MOG.3.0\MOG_CoreControls\obj\Release\MOG_CoreControls.csproj.GenerateResource.Cache
+C:\Projects\MOG.3.0\MOG_CoreControls\obj\Release\MOG_CoreControls.dll
+C:\Projects\MOG.3.0\MOG_CoreControls\obj\Release\MOG_CoreControls.pdb

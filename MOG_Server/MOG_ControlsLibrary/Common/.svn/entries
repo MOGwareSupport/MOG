@@ -1,0 +1,49 @@
+9
+
+dir
+3693
+file:///\x5cNemesis/SVN/MOG.3.0/MOG_Server/MOG_ControlsLibrary/Common
+file:///\x5cNemesis/SVN
+
+
+
+2007-10-04T22:23:06.612834Z
+1458
+jwhipple
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+6f4c6ef8-4a57-ca48-891f-73a624405d5e
+
+MogControl_ListViewFilter
+dir
+
+MogUtil_Sql
+dir
+
+CallbackDialogForm
+dir
+
+InformerBox
+dir
+
+MogRepositoryBrowserForm
+dir
+
+util_DriveMapper
+dir
+
+util_Utils
+dir
+

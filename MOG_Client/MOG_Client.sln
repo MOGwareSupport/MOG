@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOG_Client", "MOG_Client.csproj", "{31518FC0-2025-4075-A19B-B1D2757CA4CD}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MOG", "..\MOG\MOG.vcproj", "{71A8EB1E-EA48-48DC-9285-0AA0720C0FEA}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{31518FC0-2025-4075-A19B-B1D2757CA4CD}.Debug.ActiveCfg = Debug|.NET
+		{31518FC0-2025-4075-A19B-B1D2757CA4CD}.Debug.Build.0 = Debug|.NET
+		{31518FC0-2025-4075-A19B-B1D2757CA4CD}.Release.ActiveCfg = Release|.NET
+		{31518FC0-2025-4075-A19B-B1D2757CA4CD}.Release.Build.0 = Release|.NET
+		{71A8EB1E-EA48-48DC-9285-0AA0720C0FEA}.Debug.ActiveCfg = Debug|Win32
+		{71A8EB1E-EA48-48DC-9285-0AA0720C0FEA}.Debug.Build.0 = Debug|Win32
+		{71A8EB1E-EA48-48DC-9285-0AA0720C0FEA}.Release.ActiveCfg = Release|Win32
+		{71A8EB1E-EA48-48DC-9285-0AA0720C0FEA}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

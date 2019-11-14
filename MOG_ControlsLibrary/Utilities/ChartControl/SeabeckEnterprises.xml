@@ -1,0 +1,587 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SeabeckEnterprises</name>
+    </assembly>
+    <members>
+        <member name="T:SeabeckEnterprises.SeabeckCharts.BarSeries">
+            <summary>
+            Class to hold Series (Y) Data and Series MetaData for a chart.
+            </summary>
+        </member>
+        <member name="T:SeabeckEnterprises.SeabeckCharts.BaseSeries">
+            <summary>
+            Abstract Clas for Implementation of LineSeries and ScatterSeries
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.BaseSeries.Name">
+            <summary>
+            Gets or Sets the Series name.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.BaseSeries.Color">
+            <summary>
+            Gets or Sets the Series Color.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.BaseSeries.Thickness">
+            <summary>
+            Gets or Sets line thickness.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.BaseSeries.Data">
+            <summary>
+            Gets or Sets Series Data.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.BaseSeries.Tick">
+            <summary>
+            Gets or Sets Series TickMark.
+            </summary>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.BarSeries.#ctor(System.String,System.Drawing.Color,System.Collections.ArrayList)">
+            <summary>
+            ScatterSeries Constructor
+            </summary>
+            <param name="name">The Series Name.</param>
+            <param name="color">The Series Color.</param>
+            <param name="thick">The line thickness for this Series.</param>
+            <param name="tickMark">The Style of Tick to use for Drawing.</param>
+            <param name="data">The Series Data.</param>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.BarSeries.Name">
+            <summary>
+            Gets or Sets the LineSeries name.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.BarSeries.Color">
+            <summary>
+            Gets or Sets the LineSeries Color.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.BarSeries.Thickness">
+            <summary>
+            Gets or Sets line thickness. Not Used for BarChart.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.BarSeries.Data">
+            <summary>
+            Gets or Sets LineSeries Data.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.BarSeries.Tick">
+            <summary>
+            Sets the TickMark Style for the Chart. Not Used for BarChart.
+            </summary>
+        </member>
+        <member name="T:SeabeckEnterprises.SeabeckCharts.LineChart">
+            <summary>
+            LineChart User Control.
+            </summary>
+            
+        </member>
+        <member name="F:SeabeckEnterprises.SeabeckCharts.LineChart.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.LineChart.#ctor">
+            <summary>
+            LineChart Constructor.
+            </summary>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.LineChart.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.LineChart.SetXValues(System.Double[])">
+            <summary>
+            Adds a set of X values to the chart.  Only 1 set of X-Values may be used in an instance of a LineChart.
+            </summary>
+            <param name="XPoints">The array of doubles used as X-Values.</param>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.LineChart.AddSeries(System.String,System.Drawing.Color,System.Single,System.Boolean,System.Boolean,SeabeckEnterprises.SeabeckCharts.TickMark,System.Double[])">
+            <summary>
+            Adds a Series (set of Y-Values) to the LineChart.
+            </summary>
+            <param name="name">Sets the Series Name.</param>
+            <param name="color">Sets the Series Color.</param>
+            <param name="thickness">Sets the line thickness.</param>
+            <param name="drawPoints">Tells the LineChart whether to draw the actual points or not.</param>
+            <param name="spline">Tells the LineChart whether to draw lines or splines.</param>
+            <param name="tickMark">Style of Tick to draw on Chart. (Only if drawPoints=true)</param>
+            <param name="data">Sets the Series (Y-Values) data.</param>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.LineChart.RemoveSeries(System.String)">
+            <summary>
+            Removes a Series from The LineChart.
+            </summary>
+            <param name="name">The name of the Series to be removed.</param>
+            <returns>true=Series was found and removed; false= Series not found or removed.</returns>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.LineChart.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineChart.DrawLegend">
+            <summary>
+            Tells the LineChart whether to draw the legend or not.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineChart.LegPosition">
+            <summary>
+            Tells the Linechart where you want the Legend to be drawn. (Only if DrawLegend = true)
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineChart.LegendSizeX">
+            <summary>
+            Size of the legend in pixels. (X-Direction only.  Y-Direction size is determined by the number of Series.)
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineChart.LegendAlpha">
+            <summary>
+            The Alpha component(0-255) of the ARGB Color used to draw the legend.  0=transparent.  255=opaque.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineChart.DrawClicks">
+            <summary>
+            Tells the LineChart that you intend to process mouse clicks on the Chart.  If you set this to true, the Chart will draw the coordinates of the data point closest to the point clicked.  Note that the MouseDown click finds the nearest data point, and the MouseUp click determines where the Label is drawn.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineChart.BGColor">
+            <summary>
+            Gets or Sets the Background Color of the LineChart.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineChart.LegendBG">
+            <summary>
+            Gets or Sets the Background Color of the Legend.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineChart.AxisColor">
+            <summary>
+            Gets or Sets the Color Used to draw the Axes.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineChart.TitleColor">
+            <summary>
+            Gets or Sets the Color used to Draw the Title.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineChart.Title">
+            <summary>
+            Gets or Sets the Title.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineChart.SubTitle">
+            <summary>
+            Gets or Sets the SubTitle.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineChart.SubTitleColor">
+            <summary>
+            Gets or Sets the Color used to draw the SubTitle.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineChart.XLabel">
+            <summary>
+            Gets or Sets the Label for the X-Axis.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineChart.YLabel">
+            <summary>
+            Gets or Sets the Label for the Y-Axis.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineChart.TitleFont">
+            <summary>
+            Gets or Sets the Font used to Draw the Title.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineChart.TitleFormat">
+            <summary>
+            Gets or Sets the StringFormat used to Draw the Title.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineChart.DrawGrid">
+            <summary>
+            Tells the LineChart whether you want a Grid drawn or not.
+            </summary>
+        </member>
+        <member name="T:SeabeckEnterprises.SeabeckCharts.LineSeries">
+            <summary>
+            Class to hold Series (Y) Data and Series MetaData for a chart.
+            </summary>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.LineSeries.#ctor(System.String,System.Drawing.Color,System.Single,System.Boolean,SeabeckEnterprises.SeabeckCharts.TickMark,System.Collections.ArrayList)">
+            <summary>
+            LineSeries Constructor
+            </summary>
+            <param name="name">The Series Name.</param>
+            <param name="color">The Series Color.</param>
+            <param name="thick">The line thickness for this Series.</param>
+            <param name="drawPoints">true = draw symbol at individual points; false = do not draw symbols at individual points.</param>
+            <param name="tickMark">The style of Tick to use for Drawing.</param>
+            <param name="data">The Series Data.</param>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineSeries.Name">
+            <summary>
+            Gets or Sets the LineSeries name.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineSeries.Color">
+            <summary>
+            Gets or Sets the LineSeries Color.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineSeries.DrawPoints">
+            <summary>
+            Gets or Sets bool to draw data points or not.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineSeries.Thickness">
+            <summary>
+            Gets or Sets line thickness.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineSeries.Data">
+            <summary>
+            Gets or Sets LineSeries Data.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineSeries.DrawSpline">
+            <summary>
+            Gets or Sets Spline Drawing.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.LineSeries.Tick">
+            <summary>
+            Sets the TickMark Style for the Chart.
+            </summary>
+        </member>
+        <member name="T:SeabeckEnterprises.SeabeckCharts.ScatterChart">
+            <summary>
+            ScatterChart User Control.
+            </summary>
+        </member>
+        <member name="F:SeabeckEnterprises.SeabeckCharts.ScatterChart.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.ScatterChart.#ctor">
+            <summary>
+            ScatterChart Constructor.
+            </summary>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.ScatterChart.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.ScatterChart.SetXValues(System.Double[])">
+            <summary>
+            Adds a set of X values to the chart.  Only 1 set of X-Values may be used in an instance of a ScatterChart.
+            </summary>
+            <param name="XPoints">The array of doubles used as X-Values.</param>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.ScatterChart.AddSeries(System.String,System.Drawing.Color,System.Single,SeabeckEnterprises.SeabeckCharts.TickMark,System.Double[])">
+            <summary>
+            Adds a Series (set of Y-Values) to the ScatterChart.
+            </summary>
+            <param name="name">Sets the Series Name.</param>
+            <param name="color">Sets the Series Color.</param>
+            <param name="thickness">Sets the line thickness.</param>
+            <param name="tickMark">Style of Tick to draw on Chart.</param>
+            <param name="data">Sets the Series (Y-Values) data.</param>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.ScatterChart.RemoveSeries(System.String)">
+            <summary>
+            Removes a Series from The ScatterChart.
+            </summary>
+            <param name="name">The name of the Series to be removed.</param>
+            <returns>true=Series was found and removed; false= Series not found or removed.</returns>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.ScatterChart.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterChart.DrawLegend">
+            <summary>
+            Tells the ScatterChart whether to draw the legend or not.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterChart.LegPosition">
+            <summary>
+            Tells the Scatterchart where you want the Legend to be drawn. (Only if DrawLegend = true)
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterChart.LegendSizeX">
+            <summary>
+            Size of the legend in pixels. (X-Direction only.  Y-Direction size is determined by the number of Series.)
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterChart.LegendAlpha">
+            <summary>
+            The Alpha component(0-255) of the ARGB Color used to draw the legend.  0=transparent.  255=opaque.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterChart.DrawClicks">
+            <summary>
+            Tells the ScatterChart that you intend to process mouse clicks on the Chart.  If you set this to true, the Chart will draw the coordinates of the data point closest to the point clicked.  Note that the MouseDown click finds the nearest data point, and the MouseUp click determines where the Label is drawn.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterChart.BGColor">
+            <summary>
+            Gets or Sets the Background Color of the ScatterChart.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterChart.LegendBG">
+            <summary>
+            Gets or Sets the Background Color of the Legend.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterChart.AxisColor">
+            <summary>
+            Gets or Sets the Color Used to draw the Axes.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterChart.TitleColor">
+            <summary>
+            Gets or Sets the Color used to Draw the Title.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterChart.Title">
+            <summary>
+            Gets or Sets the Title.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterChart.SubTitle">
+            <summary>
+            Gets or Sets the SubTitle.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterChart.SubTitleColor">
+            <summary>
+            Gets or Sets the Color used to draw the SubTitle.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterChart.XLabel">
+            <summary>
+            Gets or Sets the Label for the X-Axis.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterChart.YLabel">
+            <summary>
+            Gets or Sets the Label for the Y-Axis.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterChart.TitleFont">
+            <summary>
+            Gets or Sets the Font used to Draw the Title.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterChart.TitleFormat">
+            <summary>
+            Gets or Sets the StringFormat used to Draw the Title.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterChart.DrawGrid">
+            <summary>
+            Tells the ScatterChart whether you want a Grid drawn or not.
+            </summary>
+        </member>
+        <member name="T:SeabeckEnterprises.SeabeckCharts.ScatterSeries">
+            <summary>
+            Class to hold Series (Y) Data and Series MetaData for a chart.
+            </summary>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.ScatterSeries.#ctor(System.String,System.Drawing.Color,System.Single,SeabeckEnterprises.SeabeckCharts.TickMark,System.Collections.ArrayList)">
+            <summary>
+            ScatterSeries Constructor
+            </summary>
+            <param name="name">The Series Name.</param>
+            <param name="color">The Series Color.</param>
+            <param name="thick">The line thickness for this Series.</param>
+            <param name="tickMark">The Style of Tick to use for Drawing.</param>
+            <param name="data">The Series Data.</param>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterSeries.Name">
+            <summary>
+            Gets or Sets the LineSeries name.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterSeries.Color">
+            <summary>
+            Gets or Sets the LineSeries Color.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterSeries.Thickness">
+            <summary>
+            Gets or Sets line thickness.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterSeries.Data">
+            <summary>
+            Gets or Sets LineSeries Data.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.ScatterSeries.Tick">
+            <summary>
+            Sets the TickMark Style for the Chart.
+            </summary>
+        </member>
+        <member name="T:SeabeckEnterprises.SeabeckCharts.TwoDLineGraph">
+            <summary>
+            Internal Class for LineGraph.  Does most of the work for the User Control.
+            </summary>
+        </member>
+        <member name="T:SeabeckEnterprises.SeabeckCharts.TwoDScatterPlot">
+            <summary>
+            Internal Class for LineGraph.  Does most of the work for the User Control.
+            </summary>
+        </member>
+        <member name="T:SeabeckEnterprises.SeabeckCharts.VerticalBarGraph">
+            <summary>
+            Summary description for VerticalBarGraph.
+            </summary>
+        </member>
+        <member name="T:SeabeckEnterprises.SeabeckCharts.VerticalBarChart">
+            <summary>
+            VerticalBarGraph User Control.
+            </summary>
+        </member>
+        <member name="F:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.#ctor">
+            <summary>
+            VerticalBarGraph Constructor.
+            </summary>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.SetXValues(System.Double[])">
+            <summary>
+            Adds a set of X values to the chart.  Only 1 set of X-Values may be used in an instance of a VerticalBarChart.
+            </summary>
+            <param name="XPoints">The array of doubles used as X-Values.</param>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.AddSeries(System.String,System.Drawing.Color,System.Double[])">
+            <summary>
+            Adds a Series (set of Y-Values) to the VerticalBarChart.
+            </summary>
+            <param name="name">Sets the Series Name.</param>
+            <param name="color">Sets the Series Color.</param>
+            <param name="data">Sets the Series (Y-Values) data.</param>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.RemoveSeries(System.String)">
+            <summary>
+            Removes a Series from The VerticalBarChart.
+            </summary>
+            <param name="name">The name of the Series to be removed.</param>
+            <returns>true=Series was found and removed; false= Series not found or removed.</returns>
+        </member>
+        <member name="M:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.X_Categories">
+            <summary>
+            Set User Defined Category Labels for X (ie. Days of the week, etc.).
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.DrawLegend">
+            <summary>
+            Tells the VerticalBarChart whether to draw the legend or not.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.LegPosition">
+            <summary>
+            Tells the VerticalBarChart where you want the Legend to be drawn. (Only if DrawLegend = true)
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.LegendSizeX">
+            <summary>
+            Size of the legend in pixels. (X-Direction only.  Y-Direction size is determined by the number of Series.)
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.LegendAlpha">
+            <summary>
+            The Alpha component(0-255) of the ARGB Color used to draw the legend.  0=transparent.  255=opaque.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.BGColor">
+            <summary>
+            Gets or Sets the Background Color of the BarChart.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.LegendBG">
+            <summary>
+            Gets or Sets the Background Color of the Legend.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.AxisColor">
+            <summary>
+            Gets or Sets the Color Used to draw the Axes.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.TitleColor">
+            <summary>
+            Gets or Sets the Color used to Draw the Title.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.Title">
+            <summary>
+            Gets or Sets the Title.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.SubTitle">
+            <summary>
+            Gets or Sets the SubTitle.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.SubTitleColor">
+            <summary>
+            Gets or Sets the Color used to draw the SubTitle.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.XLabel">
+            <summary>
+            Gets or Sets the Label for the X-Axis.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.YLabel">
+            <summary>
+            Gets or Sets the Label for the Y-Axis.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.TitleFont">
+            <summary>
+            Gets or Sets the Font used to Draw the Title.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.TitleFormat">
+            <summary>
+            Gets or Sets the StringFormat used to Draw the Title.
+            </summary>
+        </member>
+        <member name="P:SeabeckEnterprises.SeabeckCharts.VerticalBarChart.DrawGrid">
+            <summary>
+            Tells the BarChart whether you want a Grid drawn or not.
+            </summary>
+        </member>
+    </members>
+</doc>

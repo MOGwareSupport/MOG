@@ -1,0 +1,52 @@
+9
+
+dir
+3693
+file:///\x5cNemesis/SVN/MOG.3.0/MOG_Server/MOG_ControlsLibrary/Duplicate/MogControl_LocalBranchTreeView
+file:///\x5cNemesis/SVN
+
+
+
+2008-01-29T23:42:01.656040Z
+1961
+johnren
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+6f4c6ef8-4a57-ca48-891f-73a624405d5e
+
+MogControl_LocalBranchTreeView.resx
+file
+
+
+
+
+2008-05-08T18:00:15.602317Z
+45bd84e097aae590fe334c40662127b5
+2006-10-11T21:44:12.271471Z
+1
+kier
+
+MogControl_LocalBranchTreeView.cs
+file
+
+
+
+
+2008-05-08T18:00:15.617942Z
+ca9e469b12adee33063a6115a0b85dea
+2008-01-29T23:42:01.656040Z
+1961
+johnren
+

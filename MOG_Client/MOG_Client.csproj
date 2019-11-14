@@ -1,0 +1,859 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{31518FC0-2025-4075-A19B-B1D2757CA4CD}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>MOG.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>MOG_Client</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MOG_Client</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>AppLoading.SplashForm</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>
+    </DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug Library|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug Library\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MOG_LIBRARY</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug Library|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug Library\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release Library|AnyCPU' ">
+    <OutputPath>bin\Release Library\</OutputPath>
+    <DefineConstants>TRACE;MOG_LIBRARY</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>
+    </DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release Library|x64' ">
+    <OutputPath>bin\x64\Release Library\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>
+    </DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic">
+      <Name>Microsoft.VisualBasic</Name>
+    </Reference>
+    <Reference Include="Microsoft.VisualC">
+      <Name>Microsoft.VisualC</Name>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Configuration.Install">
+      <Name>System.Configuration.Install</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.DirectoryServices">
+      <Name>system.directoryservices</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Management">
+      <Name>System.Management</Name>
+    </Reference>
+    <Reference Include="System.Messaging">
+      <Name>System.Messaging</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\MOG\MOG.vcproj">
+      <Project>{71A8EB1E-EA48-48DC-9285-0AA0720C0FEA}</Project>
+      <Name>MOG</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MOG_ControlsLibrary\MOG_ControlsLibrary.csproj">
+      <Name>MOG_ControlsLibrary</Name>
+      <Project>{ADFCADDD-4A1F-417F-BF5D-2A6359B63DF8}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\MOG_CoreControls\MOG_CoreControls.csproj">
+      <Project>{D431D16D-F85F-4D1D-B090-A49518BE5447}</Project>
+      <Name>MOG_CoreControls</Name>
+    </ProjectReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Gui\AssetManager_Helper\guiAssetManagerAssets.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Gui\AssetManager_Helper\guiAssetManagerGroups.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Gui\AssetManager_Helper\guiAssetManagerLocalData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Gui\AssetManager_Helper\guiAssetManagerTrash.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\MainMenuAboutClass.cs" />
+    <Compile Include="Client_Mog_Utilities\MainMenuEditClass.cs" />
+    <Compile Include="Client_Utilities\InitializeMogLibrary.cs" />
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_LocalWorkspaceTab\MogControl_LocalWorkspaceTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_LocalWorkspaceTab\MogControl_LocalWorkspaceTab.Designer.cs">
+      <DependentUpon>MogControl_LocalWorkspaceTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client_Gui\AssetManager_Helper\WorkspaceManager.cs" />
+    <Compile Include="Client_Gui\guiAssetArchive.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Gui\guiAssetManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Gui\guiBugManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Gui\guiConfirmDialog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Gui\guiConnectionManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Gui\guiControlUpdateManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Gui\guiCustomTab.cs" />
+    <Compile Include="Client_Gui\guiLibraryManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Gui\guiLockManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Gui\guiProjectManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Gui\guiSlaveManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Gui\guiStartup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Gui\MogTaggedString.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Gui\ProjectManager_Helper\guiProjectManagerTasks.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Gui\ProjectManager_Helper\TaskNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\AssetOptions\guiArchiveContextMenu.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\AssetOptions\guiAssetCustomToolsMenu.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\AssetOptions\guiAssetGamedataTree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\AssetOptions\guiAssetGamedataTreeTag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\AssetOptions\guiAssetSourceLock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\AssetOptions\guiAssetStatus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\AssetOptions\guiAssetTree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\AssetOptions\guiAssetTreeTag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\guiAssetController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\guiAssetImportCheck.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\guiCommandLine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\guiEventCallbacks.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\guiProject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\guiUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\guiUserPrefs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\MainMenuFileClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\MainMenuProjectsClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\MainMenuToolsClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\MainMenuViewClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Mog_Utilities\Tasks\TaskWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Client_Utilities\AssetView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Utilities\Directx_Sound.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Client_Utilities\ImageButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Client_Utilities\MogUtil_Clean.cs" />
+    <Compile Include="Client_Utilities\SpashScreen\SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCommentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminToolsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ArgumentControl\MogArgumentsButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AssetPropertiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AssetProperties\MogControl_ViewTokenTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AssetProperties\MultiPackageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AssetProperties\RippersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AssetProperties\SetupPackageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CommandViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CommandViewer.Designer.cs">
+      <DependentUpon>CommandViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ToolBoxForms\ToolBoxCustomControls\ToolBoxLinkLabelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Wizards\SetupPackagingWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Wizards\SetupRippingWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AssetProperties\SinglePackageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\BlessInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BrowseClassTreeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BrowseLibraryTreeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BrowseWorkspaceDirectory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CallbackDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateNewLocalBranchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateNewPackageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Wizards\CreateNewWorkspaceWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomToolOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormConfirmSpecial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LogReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NotifyEventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PackageManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RenameAssetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RequestBuildForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SimpleAssetOpenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SQLConnectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SyncLatestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SyncLatestSummaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToolBoxForms\ToolBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ToolBoxForms\ToolBoxCustomControls\ToolBoxCheckBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToolBoxForms\ToolBoxCustomControls\ToolBoxFileComboBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToolBoxForms\ToolBoxCustomControls\ToolBoxIniComboBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToolBoxForms\ToolBoxCustomControls\ToolBoxLabelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToolBoxForms\ToolBoxCustomControls\ToolBoxParameterButtonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToolBoxForms\ToolBoxCustomControls\ToolBoxRadioButtonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToolBoxForms\ToolBoxCustomControls\ToolBoxSimpleButtonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToolBoxForms\ToolBoxHelpers\ControlDefinition.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\ToolBoxForms\ToolBoxHelpers\ToolBoxArgumentsBrowserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToolBoxForms\ToolBoxHelpers\ToolBoxGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\XboxPropertiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOGMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_GameDataDestinationTreeView\MogControl_GameDataDestinationTreeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_LibraryExplorer\MogControl_LibraryExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_LibraryListView\MogControl_LibraryListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_LocalBranchTreeView\MogControl_LocalBranchTreeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_PictureBoxEx\MogControl_PictureBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_PriviledgesChangeForm\MogControl_PriviledgesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_RepositoryTreeViews\MogControl_LibraryTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_TaskEditor\MogControl_TaskEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_Wizard\Header.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_Wizard\HeaderDesigner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_Wizard\InfoContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_Wizard\InfoContainerDesigner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_Wizard\InfoPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_Wizard\InfoPageDesigner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_Wizard\PageCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_Wizard\PageEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_Wizard\Wizard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_Wizard\WizardDesigner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_Wizard\WizardPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogControl_Wizard\WizardPageDesigner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogForm_AutomatedTesting\MogForm_AutomatedTesting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogUtils_SkinManager\MogUtils_SkinManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MogUtil_Sql\MogUtil_Sql.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MOG_ContextMenu\MogControl_AssetContextMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MOG_ContextMenu\MogControl_ColumnContextMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MOG_ControlsLibrary\Common\MOG_ContextMenu\MogUtil_NewTemplateAsset.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Content Include="MOG.ico" />
+    <None Include="Resources\SplashClientLibrary.png" />
+    <None Include="Resources\Filter.png" />
+    <None Include="Resources\Tag.png" />
+    <None Include="Resources\CreateTag.png" />
+    <None Include="Resources\WorkspaceRemove.png" />
+    <None Include="Resources\WorkspaceRename.png" />
+    <None Include="Resources\WorkspaceNew.png" />
+    <None Include="Resources\Unchecked.png" />
+    <None Include="Resources\Checked.png" />
+    <None Include="Resources\Star.png" />
+    <None Include="Resources\Sync.png" />
+    <None Include="Resources\SyncTag.png" />
+    <None Include="Resources\ForceSync.png" />
+    <None Include="Resources\MogFolderCreate1.png" />
+    <None Include="Resources\ProjectTreeExpandAll.png" />
+    <None Include="Resources\ProjectTreeCollapseAll.png" />
+    <None Include="Resources\MogBlessLargeBackground.png" />
+    <None Include="Resources\MogBlessLarge.png" />
+    <None Include="Resources\MogServerManager.png" />
+    <None Include="Resources\MOGEventViewer.png" />
+    <None Include="Resources\MogMakeCurrent.png" />
+    <None Include="Resources\MogExplore.png" />
+    <None Include="Resources\MogFolderDelete.png" />
+    <None Include="Resources\MogFolderCreate.png" />
+    <None Include="Resources\MogEdit.png" />
+    <None Include="Resources\MogRemoveFromProject.png" />
+    <None Include="Resources\MogRename.png" />
+    <None Include="Resources\MogGenerateReport.png" />
+    <None Include="Resources\MogCheckout.png" />
+    <None Include="Resources\MogCheckin.png" />
+    <None Include="Resources\MogUndoCheckout.png" />
+    <None Include="Resources\MogSendTo.png" />
+    <None Include="Resources\MogRestore.png" />
+    <None Include="Resources\MogRepackage.png" />
+    <None Include="Resources\MogRemoveUpdate.png" />
+    <None Include="Resources\MogCopyTo.png" />
+    <None Include="Resources\MogComments.png" />
+    <None Include="Resources\MogView.png" />
+    <None Include="Resources\MogRefresh.png" />
+    <None Include="Resources\MogUpdate.png" />
+    <None Include="Resources\MogDelete.png" />
+    <None Include="Resources\MogPackageManagement.png" />
+    <None Include="Resources\MogRip.png" />
+    <None Include="Resources\MogBless.png" />
+    <None Include="Resources\MogProperties.png" />
+    <None Include="Resources\Refresh.png" />
+    <None Include="Resources\Package.ico" />
+    <None Include="Resources\Archive.png" />
+    <None Include="Resources\MOG Sync Options.ico" />
+    <None Include="Resources\Classification base%28Blue%29.ico" />
+    <None Include="Resources\BaseFolder%2848%29.ico" />
+    <None Include="Resources\Mog Filter button.png" />
+    <None Include="Resources\workspace.png" />
+    <None Include="Resources\workspaceActive.png" />
+    <None Include="Resources\workspaceInActive.png" />
+    <None Include="Resources\MOG Library target1.png" />
+    <None Include="Resources\Splash-Client-2005.png" />
+    <None Include="Resources\Spash-Client-2005Light.png" />
+    <None Include="Resources\ProjectManager.png" />
+    <EmbeddedResource Include="MOG_ControlsLibrary\Common\MogControl_LocalWorkspaceTab\MogControl_LocalWorkspaceTab.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MogControl_LocalWorkspaceTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client_Mog_Utilities\Tasks\TaskWindow.resx">
+      <DependentUpon>TaskWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client_Utilities\SpashScreen\SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCommentForm.resx">
+      <DependentUpon>AddCommentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminToolsForm.resx">
+      <DependentUpon>AdminToolsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ArgumentControl\MogArgumentsButton.resx">
+      <DependentUpon>MogArgumentsButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AssetPropertiesForm.resx">
+      <DependentUpon>AssetPropertiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AssetProperties\MogControl_ViewTokenTextBox.resx">
+      <DependentUpon>MogControl_ViewTokenTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AssetProperties\MultiPackageControl.resx">
+      <DependentUpon>MultiPackageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AssetProperties\RippersControl.resx">
+      <DependentUpon>RippersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AssetProperties\SetupPackageForm.resx">
+      <DependentUpon>SetupPackageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CommandViewer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CommandViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToolBoxForms\ToolBoxCustomControls\ToolBoxLinkLabelForm.resx">
+      <DependentUpon>ToolBoxLinkLabelForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\SetupPackagingWizard.resx">
+      <DependentUpon>SetupPackagingWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\SetupRippingWizard.resx">
+      <DependentUpon>SetupRippingWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AssetProperties\SinglePackageControl.resx">
+      <DependentUpon>SinglePackageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BlessInfoForm.resx">
+      <DependentUpon>BlessInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BrowseClassTreeForm.resx">
+      <DependentUpon>BrowseClassTreeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BrowseLibraryTreeForm.resx">
+      <DependentUpon>BrowseLibraryTreeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BrowseWorkspaceDirectory.resx">
+      <DependentUpon>BrowseWorkspaceDirectory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CallbackDialogForm.resx">
+      <DependentUpon>CallbackDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateNewLocalBranchForm.resx">
+      <DependentUpon>CreateNewLocalBranchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateNewPackageForm.resx">
+      <DependentUpon>CreateNewPackageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\CreateNewWorkspaceWizard.resx">
+      <DependentUpon>CreateNewWorkspaceWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomToolOptionsForm.resx">
+      <DependentUpon>CustomToolOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormConfirmSpecial.resx">
+      <DependentUpon>FormConfirmSpecial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LogReportForm.resx">
+      <DependentUpon>LogReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewListForm.resx">
+      <DependentUpon>NewListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewTaskForm.resx">
+      <DependentUpon>NewTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NotifyEventForm.resx">
+      <DependentUpon>NotifyEventForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PackageManagementForm.resx">
+      <DependentUpon>PackageManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RenameAssetForm.resx">
+      <DependentUpon>RenameAssetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RequestBuildForm.resx">
+      <DependentUpon>RequestBuildForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SimpleAssetOpenForm.resx">
+      <DependentUpon>SimpleAssetOpenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SQLConnectForm.resx">
+      <DependentUpon>SQLConnectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SyncLatestForm.resx">
+      <DependentUpon>SyncLatestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SyncLatestSummaryForm.resx">
+      <DependentUpon>SyncLatestSummaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToolBoxForms\ToolBox.resx">
+      <DependentUpon>ToolBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToolBoxForms\ToolBoxCustomControls\ToolBoxCheckBoxForm.resx">
+      <DependentUpon>ToolBoxCheckBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToolBoxForms\ToolBoxCustomControls\ToolBoxFileComboBoxForm.resx">
+      <DependentUpon>ToolBoxFileComboBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToolBoxForms\ToolBoxCustomControls\ToolBoxIniComboBoxForm.resx">
+      <DependentUpon>ToolBoxIniComboBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToolBoxForms\ToolBoxCustomControls\ToolBoxLabelForm.resx">
+      <DependentUpon>ToolBoxLabelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToolBoxForms\ToolBoxCustomControls\ToolBoxParameterButtonForm.resx">
+      <DependentUpon>ToolBoxParameterButtonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToolBoxForms\ToolBoxCustomControls\ToolBoxRadioButtonForm.resx">
+      <DependentUpon>ToolBoxRadioButtonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToolBoxForms\ToolBoxCustomControls\ToolBoxSimpleButtonForm.resx">
+      <DependentUpon>ToolBoxSimpleButtonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToolBoxForms\ToolBoxHelpers\ControlDefinition.resx">
+      <DependentUpon>ControlDefinition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToolBoxForms\ToolBoxHelpers\ToolBoxArgumentsBrowserForm.resx">
+      <DependentUpon>ToolBoxArgumentsBrowserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToolBoxForms\ToolBoxHelpers\ToolBoxGroupBox.resx">
+      <DependentUpon>ToolBoxGroupBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XboxPropertiesForm.resx">
+      <DependentUpon>XboxPropertiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOGMainForm.resx">
+      <DependentUpon>MOGMainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOG_ControlsLibrary\Common\MogControl_GameDataDestinationTreeView\MogControl_GameDataDestinationTreeView.resx">
+      <DependentUpon>MogControl_GameDataDestinationTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOG_ControlsLibrary\Common\MogControl_LibraryExplorer\MogControl_LibraryExplorer.resx">
+      <DependentUpon>MogControl_LibraryExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOG_ControlsLibrary\Common\MogControl_LibraryListView\MogControl_LibraryListView.resx">
+      <DependentUpon>MogControl_LibraryListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOG_ControlsLibrary\Common\MogControl_LocalBranchTreeView\MogControl_LocalBranchTreeView.resx">
+      <DependentUpon>MogControl_LocalBranchTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOG_ControlsLibrary\Common\MogControl_PictureBoxEx\MogControl_PictureBoxEx.resx">
+      <DependentUpon>MogControl_PictureBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOG_ControlsLibrary\Common\MogControl_PriviledgesChangeForm\MogControl_PriviledgesForm.resx">
+      <DependentUpon>MogControl_PriviledgesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOG_ControlsLibrary\Common\MogControl_RepositoryTreeViews\MogControl_LibraryTreeView.resx">
+      <DependentUpon>MogControl_LibraryTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOG_ControlsLibrary\Common\MogControl_TaskEditor\MogControl_TaskEditor.resx">
+      <DependentUpon>MogControl_TaskEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOG_ControlsLibrary\Common\MogControl_Wizard\Header.resx">
+      <DependentUpon>Header.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOG_ControlsLibrary\Common\MogControl_Wizard\InfoContainer.resx">
+      <DependentUpon>InfoContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOG_ControlsLibrary\Common\MogControl_Wizard\InfoPage.resx">
+      <DependentUpon>InfoPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOG_ControlsLibrary\Common\MogControl_Wizard\Wizard.resx">
+      <DependentUpon>Wizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOG_ControlsLibrary\Common\MogControl_Wizard\WizardPage.resx">
+      <DependentUpon>WizardPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOG_ControlsLibrary\Common\MogForm_AutomatedTesting\MogForm_AutomatedTesting.resx">
+      <DependentUpon>MogForm_AutomatedTesting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

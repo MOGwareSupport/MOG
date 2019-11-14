@@ -1,0 +1,22 @@
+K 13
+bugtraq:label
+V 5
+issue
+K 15
+bugtraq:message
+V 13
+issue %BUGID%
+K 11
+bugtraq:url
+V 43
+http://bugs.mogware.com/view.php?id=%BUGID%
+K 21
+bugtraq:warnifnoissue
+V 4
+true
+K 10
+svn:ignore
+V 10
+Thumbs.db
+
+END

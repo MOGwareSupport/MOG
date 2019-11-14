@@ -1,0 +1,11 @@
+C:\Projects\MOG.3.0\MOG_LicenseGenerator\bin\Debug\MOG_TimeBomb.exe
+C:\Projects\MOG.3.0\MOG_LicenseGenerator\bin\Debug\MOG_TimeBomb.pdb
+C:\Projects\MOG.3.0\MOG_LicenseGenerator\bin\Debug\MOG.dll
+C:\Projects\MOG.3.0\MOG_LicenseGenerator\bin\Debug\MOG_CoreControls.dll
+C:\Projects\MOG.3.0\MOG_LicenseGenerator\bin\Debug\MOG_CoreControls.pdb
+C:\Projects\MOG.3.0\MOG_LicenseGenerator\bin\Debug\MOG.pdb
+C:\Projects\MOG.3.0\MOG_LicenseGenerator\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\MOG.3.0\MOG_LicenseGenerator\obj\Debug\MOG_LicenseGenerator.Form1.resources
+C:\Projects\MOG.3.0\MOG_LicenseGenerator\obj\Debug\MOG_LicenseGenerator.csproj.GenerateResource.Cache
+C:\Projects\MOG.3.0\MOG_LicenseGenerator\obj\Debug\MOG_TimeBomb.exe
+C:\Projects\MOG.3.0\MOG_LicenseGenerator\obj\Debug\MOG_TimeBomb.pdb

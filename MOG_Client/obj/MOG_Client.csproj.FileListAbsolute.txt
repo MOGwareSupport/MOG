@@ -1,0 +1,239 @@
+C:\Projects\MOG.3.0\MOG_Client\bin\Debug\MOG_Client.exe
+C:\Projects\MOG.3.0\MOG_Client\bin\Debug\MOG_Client.pdb
+C:\Projects\MOG.3.0\MOG_Client\bin\Debug\MOG.dll
+C:\Projects\MOG.3.0\MOG_Client\bin\Debug\MOG_ControlsLibrary.dll
+C:\Projects\MOG.3.0\MOG_Client\bin\Debug\MOG_CoreControls.dll
+C:\Projects\MOG.3.0\MOG_Client\bin\Debug\MOG_ControlsLibrary.pdb
+C:\Projects\MOG.3.0\MOG_Client\bin\Debug\MOG_CoreControls.pdb
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.csproj.ResolveComReference.cache
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Client_Gui.AssetManager_Helper.MogControl_LocalWorkspaceTab.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Client_Mog_Utilities.Tasks.TaskWindow.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\AppLoading.SplashForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.AboutForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.AddCommentForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.AdminToolsForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.ArgumentControl.MogArgumentsButton.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.AssetPropertiesForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.AssetProperties.MogControl_ViewTokenTextBox.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.AssetProperties.MultiPackageControl.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.AssetProperties.RippersControl.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.AssetProperties.SetupPackageForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.CommandViewer.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.ToolBoxLinkLabelForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.AssetProperties.SetupPackagingWizard.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.AssetProperties.SetupRippingWizard.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.AssetProperties.SinglePackageControl.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.BlessInfoForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.BrowseClassTreeForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.BrowseLibraryTreeForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.BrowseWorkspaceDirectory.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.CallbackDialogForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.CreateNewLocalBranchForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.CreateNewPackageForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.CreateNewWorkspaceWizard.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.CustomToolOptionsForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.FormConfirmSpecial.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.ListForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.LoginForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.Report.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.NewListForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.NewTaskForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.NotifyEventForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.PackageManagementForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.RenameAssetForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.RequestBuildForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.SimpleAssetOpenForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.SQLConnectForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.SyncLatestForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.SyncLatestSummaryForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.ToolBox.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.ToolBoxCheckBoxForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.ToolBoxForms.ToolBoxFileComboBoxForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.ToolBoxIniComboBoxForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.ToolBoxLabelForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.EditParameterButtonForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.ToolBoxForms.ToolBoxRadioButtonForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.SimpleButtonForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.ControlDefinition.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.ToolBoxForms.ToolBoxArgumentsBrowserForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.ToolBoxForms.ToolBoxGroupBox.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Forms.XboxPropertiesForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.MogMainForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_ControlsLibrary.Common.MogControl_GameDataDestinationTreeView.MogControl_GameDataDestinationTreeView.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_ControlsLibrary.Common.MogControl_LibraryExplorer.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_ControlsLibrary.Common.MogControl_LibraryListView.MogControl_LibraryListView.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_ControlsLibrary.Common.MogControl_LocalBranchTreeView.MogControl_LocalBranchTreeView.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_ControlsLibrary.Common.MogControl_PictureBoxEx.MogControl_PictureBoxEx.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_ControlsLibrary.Common.MogControl_PrivilegesForm.MogControl_PrivilegesForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_ControlsLibrary.Common.MogControl_RepositoryTreeViews.MogControl_LibraryTreeView.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_ControlsLibrary.Common.MogControl_TaskEditor.MogControl_TaskEditor.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\Gui.Wizard.Header.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\Gui.Wizard.InfoContainer.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\Gui.Wizard.InfoPage.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\Gui.Wizard.Wizard.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\Gui.Wizard.WizardPage.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_ControlsLibrary.Common.MogForm_AutomatedTesting.MogForm_AutomatedTesting.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.Properties.Resources.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.csproj.GenerateResource.Cache
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.exe
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug\MOG_Client.pdb
+C:\Projects\MOG.3.0\MOG_Client\bin\Debug Library\MOG_Client.exe
+C:\Projects\MOG.3.0\MOG_Client\bin\Debug Library\MOG_Client.pdb
+C:\Projects\MOG.3.0\MOG_Client\bin\Debug Library\MOG.dll
+C:\Projects\MOG.3.0\MOG_Client\bin\Debug Library\MOG_ControlsLibrary.dll
+C:\Projects\MOG.3.0\MOG_Client\bin\Debug Library\MOG_CoreControls.dll
+C:\Projects\MOG.3.0\MOG_Client\bin\Debug Library\MOG_ControlsLibrary.pdb
+C:\Projects\MOG.3.0\MOG_Client\bin\Debug Library\MOG_CoreControls.pdb
+C:\Projects\MOG.3.0\MOG_Client\bin\Debug Library\MOG.pdb
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\ResolveAssemblyReference.cache
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.csproj.ResolveComReference.cache
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Client_Gui.AssetManager_Helper.MogControl_LocalWorkspaceTab.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Client_Mog_Utilities.Tasks.TaskWindow.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\AppLoading.SplashForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.AboutForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.AddCommentForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.AdminToolsForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.ArgumentControl.MogArgumentsButton.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.AssetPropertiesForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.AssetProperties.MogControl_ViewTokenTextBox.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.AssetProperties.MultiPackageControl.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.AssetProperties.RippersControl.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.AssetProperties.SetupPackageForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.CommandViewer.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.ToolBoxLinkLabelForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.AssetProperties.SetupPackagingWizard.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.AssetProperties.SetupRippingWizard.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.AssetProperties.SinglePackageControl.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.BlessInfoForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.BrowseClassTreeForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.BrowseLibraryTreeForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.BrowseWorkspaceDirectory.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.CallbackDialogForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.CreateNewLocalBranchForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.CreateNewPackageForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.CreateNewWorkspaceWizard.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.CustomToolOptionsForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.FormConfirmSpecial.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.ListForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.LoginForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.Report.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.NewListForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.NewTaskForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.NotifyEventForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.PackageManagementForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.RenameAssetForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.RequestBuildForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.SimpleAssetOpenForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.SQLConnectForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.SyncLatestForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.SyncLatestSummaryForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.ToolBox.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.ToolBoxCheckBoxForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.ToolBoxForms.ToolBoxFileComboBoxForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.ToolBoxIniComboBoxForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.ToolBoxLabelForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.EditParameterButtonForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.ToolBoxForms.ToolBoxRadioButtonForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.SimpleButtonForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.ControlDefinition.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.ToolBoxForms.ToolBoxArgumentsBrowserForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.ToolBoxForms.ToolBoxGroupBox.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Forms.XboxPropertiesForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.MogMainForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_ControlsLibrary.Common.MogControl_GameDataDestinationTreeView.MogControl_GameDataDestinationTreeView.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_ControlsLibrary.Common.MogControl_LibraryExplorer.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_ControlsLibrary.Common.MogControl_LibraryListView.MogControl_LibraryListView.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_ControlsLibrary.Common.MogControl_LocalBranchTreeView.MogControl_LocalBranchTreeView.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_ControlsLibrary.Common.MogControl_PictureBoxEx.MogControl_PictureBoxEx.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_ControlsLibrary.Common.MogControl_PrivilegesForm.MogControl_PrivilegesForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_ControlsLibrary.Common.MogControl_RepositoryTreeViews.MogControl_LibraryTreeView.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_ControlsLibrary.Common.MogControl_TaskEditor.MogControl_TaskEditor.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\Gui.Wizard.Header.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\Gui.Wizard.InfoContainer.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\Gui.Wizard.InfoPage.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\Gui.Wizard.Wizard.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\Gui.Wizard.WizardPage.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_ControlsLibrary.Common.MogForm_AutomatedTesting.MogForm_AutomatedTesting.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.Properties.Resources.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.csproj.GenerateResource.Cache
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.exe
+C:\Projects\MOG.3.0\MOG_Client\obj\Debug Library\MOG_Client.pdb
+C:\Projects\MOG.3.0\MOG_Client\bin\Release\MOG_Client.exe
+C:\Projects\MOG.3.0\MOG_Client\bin\Release\MOG.dll
+C:\Projects\MOG.3.0\MOG_Client\bin\Release\MOG_ControlsLibrary.dll
+C:\Projects\MOG.3.0\MOG_Client\bin\Release\MOG_CoreControls.dll
+C:\Projects\MOG.3.0\MOG_Client\bin\Release\MOG_CoreControls.pdb
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\ResolveAssemblyReference.cache
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.csproj.ResolveComReference.cache
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Client_Gui.AssetManager_Helper.MogControl_LocalWorkspaceTab.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Client_Mog_Utilities.Tasks.TaskWindow.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\AppLoading.SplashForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.AboutForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.AddCommentForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.AdminToolsForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.ArgumentControl.MogArgumentsButton.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.AssetPropertiesForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.AssetProperties.MogControl_ViewTokenTextBox.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.AssetProperties.MultiPackageControl.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.AssetProperties.RippersControl.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.AssetProperties.SetupPackageForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.CommandViewer.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.ToolBoxLinkLabelForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.AssetProperties.SetupPackagingWizard.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.AssetProperties.SetupRippingWizard.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.AssetProperties.SinglePackageControl.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.BlessInfoForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.BrowseClassTreeForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.BrowseLibraryTreeForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.BrowseWorkspaceDirectory.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.CallbackDialogForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.CreateNewLocalBranchForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.CreateNewPackageForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.CreateNewWorkspaceWizard.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.CustomToolOptionsForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.FormConfirmSpecial.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.ListForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.LoginForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.Report.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.NewListForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.NewTaskForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.NotifyEventForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.PackageManagementForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.RenameAssetForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.RequestBuildForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.SimpleAssetOpenForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.SQLConnectForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.SyncLatestForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.SyncLatestSummaryForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.ToolBox.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.ToolBoxCheckBoxForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.ToolBoxForms.ToolBoxFileComboBoxForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.ToolBoxIniComboBoxForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.ToolBoxLabelForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.EditParameterButtonForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.ToolBoxForms.ToolBoxRadioButtonForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.SimpleButtonForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.ControlDefinition.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.ToolBoxForms.ToolBoxArgumentsBrowserForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.ToolBoxForms.ToolBoxGroupBox.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Forms.XboxPropertiesForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.MogMainForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_ControlsLibrary.Common.MogControl_GameDataDestinationTreeView.MogControl_GameDataDestinationTreeView.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_ControlsLibrary.Common.MogControl_LibraryExplorer.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_ControlsLibrary.Common.MogControl_LibraryListView.MogControl_LibraryListView.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_ControlsLibrary.Common.MogControl_LocalBranchTreeView.MogControl_LocalBranchTreeView.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_ControlsLibrary.Common.MogControl_PictureBoxEx.MogControl_PictureBoxEx.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_ControlsLibrary.Common.MogControl_PrivilegesForm.MogControl_PrivilegesForm.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_ControlsLibrary.Common.MogControl_RepositoryTreeViews.MogControl_LibraryTreeView.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_ControlsLibrary.Common.MogControl_TaskEditor.MogControl_TaskEditor.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\Gui.Wizard.Header.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\Gui.Wizard.InfoContainer.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\Gui.Wizard.InfoPage.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\Gui.Wizard.Wizard.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\Gui.Wizard.WizardPage.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_ControlsLibrary.Common.MogForm_AutomatedTesting.MogForm_AutomatedTesting.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.Properties.Resources.resources
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.csproj.GenerateResource.Cache
+C:\Projects\MOG.3.0\MOG_Client\obj\Release\MOG_Client.exe
+C:\Projects\MOG.3.0\MOG_Client\bin\Debug\MOG.pdb
